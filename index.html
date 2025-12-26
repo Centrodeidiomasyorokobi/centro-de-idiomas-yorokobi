@@ -777,15 +777,6 @@
     <footer>
         <p>&copy; 2025 Yorokobi Centro de Idiomas. Todos los derechos reservados.</p>
     </footer>
-    <!-- Modal Pop-up -->
-    <div id="popupModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h2>¡Oferta Especial!</h2>
-            <p>Inscríbete ahora y obtén un descuento en tu primer mes. ¡No te lo pierdas!</p>
-            <a href="https://wa.me/522471058977" class="whatsapp-main-btn" target="_blank">Contáctanos</a>
-        </div>
-    </div>
     <!-- Modal para Artículo de Blog -->
     <div id="articleModal" class="modal">
         <div class="modal-content" style="max-width: 1000px; padding: 0; overflow: auto; text-align: left;">
@@ -800,11 +791,6 @@
             <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-8 fade-in-up delay-200">
                 Compendio exhaustivo de estrategias, logística y preparación académica para conquistar el idioma japonés.
             </p>
-            <div class="fade-in-up delay-300">
-                <a href="#estrategia" class="bg-white text-japan-red font-bold py-3 px-8 rounded-full hover:bg-gray-100 transition shadow-lg transform hover:scale-105 duration-300 inline-block">
-                    Ver Estrategia
-                </a>
-            </div>
         </div>
     </header>
     <section class="py-16 px-6 container mx-auto max-w-4xl">
@@ -1191,17 +1177,6 @@
         }
         // Iniciar Test al cargar
         restartQuiz();
-        // Pop-up Logic
-        function showModal() {
-            if (!sessionStorage.getItem('popupShown')) {
-                document.getElementById('popupModal').style.display = 'block';
-                sessionStorage.setItem('popupShown', 'true');
-            }
-        }
-        function closeModal() {
-            document.getElementById('popupModal').style.display = 'none';
-        }
-        window.onload = showModal;
         // Form Submission (simulada, usa email.js o similar en producción)
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
