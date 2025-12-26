@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700;900&display=swap" rel="stylesheet">
-   
+    
     <script>
         tailwind.config = {
             theme: {
@@ -37,16 +37,18 @@
             opacity: 0;
             transform: translateY(20px);
         }
-       
+        
         .delay-100 { animation-delay: 0.1s; }
         .delay-200 { animation-delay: 0.2s; }
         .delay-300 { animation-delay: 0.3s; }
+
         @keyframes fadeInUp {
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
+
         /* Estilo para listas personalizadas */
         .list-check li {
             position: relative;
@@ -60,6 +62,7 @@
             color: #BC002D;
             font-weight: bold;
         }
+
         :root {
             --primary: #FF4E50; /* Rojo vibrante */
             --primary-dark: #D43F41;
@@ -71,12 +74,14 @@
             --glass: rgba(255, 255, 255, 0.95);
             --shadow: 0 8px 30px rgba(0,0,0,0.12);
         }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
         }
+
         body {
             background: var(--bg-gradient);
             color: var(--secondary);
@@ -84,11 +89,12 @@
             line-height: 1.6;
             min-height: 100vh;
         }
+
         /* --- NAVEGACIÓN --- */
         nav {
             background: var(--glass);
             backdrop-filter: blur(10px);
-            padding: 1rem 5%;
+            padding: 0.5rem 5%; /* Reduje un poco el padding vertical */
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -97,22 +103,29 @@
             top: 0;
             z-index: 1000;
         }
+
         .logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--primary);
-            letter-spacing: 1px;
             cursor: pointer;
             display: flex;
             align-items: center;
-            gap: 10px;
         }
-        .logo span { color: var(--secondary); }
+        /* Estilo para la imagen del logo */
+        .logo img {
+            height: 60px; /* Altura controlada para la barra de navegación */
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+        .logo img:hover {
+            transform: scale(1.05);
+        }
+
+
         .nav-links {
             display: flex;
             gap: 10px;
             flex-wrap: wrap;
         }
+
         .nav-btn {
             background: transparent;
             border: none;
@@ -124,12 +137,14 @@
             border-radius: 50px;
             color: #555;
         }
+
         .nav-btn:hover, .nav-btn.active {
             background-color: var(--primary);
             color: var(--white);
             transform: translateY(-2px);
             box-shadow: 0 4px 15px rgba(255, 78, 80, 0.4);
         }
+
         .nav-btn.test-btn {
             border: 2px solid var(--primary);
             color: var(--primary);
@@ -138,6 +153,7 @@
             background: var(--primary);
             color: white;
         }
+
         /* --- CONTENEDOR PRINCIPAL --- */
         main {
             min-height: 85vh;
@@ -145,6 +161,7 @@
             max-width: 1400px;
             margin: 0 auto;
         }
+
         section {
             display: none;
             opacity: 0;
@@ -155,11 +172,13 @@
             opacity: 1;
             animation: slideUp 0.6s ease-out;
         }
+
         @keyframes slideUp {
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        /* --- HERO RENOVADO --- */
+
+        /* --- HERO STYLES (General) --- */
         .hero-banner {
             background: linear-gradient(120deg, #ffffff 0%, #fff0f0 100%);
             padding: 4rem 2rem;
@@ -171,7 +190,7 @@
             overflow: hidden;
             border: 1px solid rgba(255,255,255,0.5);
         }
-       
+        
         .hero-banner::before, .hero-banner::after {
             content: ''; position: absolute; border-radius: 50%; z-index: 0;
         }
@@ -181,7 +200,29 @@
         .hero-banner::after {
             bottom: -50px; right: -50px; width: 200px; height: 200px; background: var(--accent); opacity: 0.1;
         }
+
+        /* --- MODIFICACIÓN PARA EL BANNER PRINCIPAL (HOME) CON IMAGEN --- */
+        #home .hero-banner {
+            /* Reemplaza el gradiente por la imagen */
+            background-image: url('Imagenes/banner.png'); 
+            background-size: cover;
+            background-position: center center;
+            /* Altura mínima para que se vea la imagen ya que no hay texto */
+            min-height: 500px; 
+            display: flex;
+            align-items: flex-end; /* Alinea el botón al fondo */
+            justify-content: center;
+            padding-bottom: 3rem;
+        }
+        /* Oculta los círculos decorativos solo en el banner principal */
+        #home .hero-banner::before,
+        #home .hero-banner::after {
+            display: none;
+        }
+
+
         .hero-content { position: relative; z-index: 1; }
+
         .amij-badge {
             background: var(--secondary);
             color: var(--white);
@@ -195,6 +236,7 @@
             gap: 8px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
+
         .hero-banner h1 {
             font-size: 3rem; margin-bottom: 0.5rem; color: var(--secondary);
             font-family: 'Noto Sans JP', sans-serif; line-height: 1.2;
@@ -203,6 +245,7 @@
             font-size: 1.2rem; color: var(--primary); font-weight: 600;
             letter-spacing: 2px; margin-bottom: 2.5rem; text-transform: uppercase;
         }
+
         .whatsapp-main-btn {
             background: #25D366; color: white; padding: 15px 40px; border-radius: 50px;
             font-weight: bold; font-size: 1.1rem; display: inline-flex; align-items: center;
@@ -210,12 +253,14 @@
             transition: all 0.3s; border: 4px solid white;
         }
         .whatsapp-main-btn:hover { transform: translateY(-5px) scale(1.05); }
+
         /* --- CARDS & GRID --- */
         .info-grid {
             display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
             margin-bottom: 5rem; align-items: center;
         }
         .info-text h3 { font-size: 2.2rem; margin-bottom: 1.5rem; color: var(--primary); }
+
         .values-grid {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem; margin-top: 2rem;
@@ -229,7 +274,8 @@
         .value-card.mis { border-top: 5px solid var(--primary); }
         .value-card.vis { border-top: 5px solid var(--accent); }
         .value-card:hover { transform: translateY(-10px); }
-        /* --- TESTIMONIOS (NUEVO) --- */
+
+        /* --- TESTIMONIOS --- */
         .testimonials-section { margin-top: 4rem; text-align: center; }
         .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem; }
         .testimonial-card {
@@ -242,7 +288,8 @@
         }
         .stars { color: #FFD700; margin-bottom: 10px; }
         .student-name { font-weight: bold; color: var(--secondary); margin-top: 15px; display: block; }
-        /* --- METODOLOGIA (NUEVO) --- */
+
+        /* --- METODOLOGIA --- */
         .methodology-box {
             background: var(--secondary); color: white; border-radius: 30px;
             padding: 3rem; margin: 4rem 0; display: flex; align-items: center; gap: 2rem;
@@ -253,7 +300,8 @@
             border-radius: 50%; display: flex; align-items: center; justify-content: center;
             font-size: 2.5rem; flex-shrink: 0; color: var(--accent);
         }
-        /* --- FAQ (NUEVO) --- */
+
+        /* --- FAQ --- */
         .faq-item {
             background: white; margin-bottom: 10px; border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05); overflow: hidden;
@@ -272,6 +320,7 @@
         }
         .faq-item.active .faq-answer { padding-bottom: 1.5rem; max-height: 200px; }
         .faq-item.active .faq-question { color: var(--primary); }
+
         /* --- TEST DE NIVEL --- */
         .quiz-container {
             max-width: 800px; margin: 0 auto; background: var(--white); padding: 3rem;
@@ -280,6 +329,7 @@
         .progress-bar { width: 100%; height: 10px; background: #eee; border-radius: 5px; margin: 2rem 0; overflow: hidden; }
         .progress-fill { height: 100%; background: var(--primary); width: 0%; transition: width 0.3s; }
         .question-text { font-size: 1.5rem; font-weight: 600; margin-bottom: 2rem; font-family: 'Noto Sans JP', sans-serif; }
+        
         .options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
         .option-btn {
             background: #f8f9fa; border: 2px solid #e9ecef; padding: 1.2rem;
@@ -290,16 +340,19 @@
         .option-btn.selected { background: var(--secondary); color: white; border-color: var(--secondary); }
         .option-btn.correct { background: #28a745; color: white; }
         .option-btn.incorrect { background: #dc3545; color: white; }
+        
         .next-btn {
             background: var(--primary); color: white; border: none; padding: 12px 30px;
             border-radius: 50px; font-weight: bold; font-size: 1.1rem; cursor: pointer; display: none;
         }
+
         .result-box { display: none; text-align: center; animation: fadeIn 0.5s; }
         .score-circle {
             width: 150px; height: 150px; background: var(--primary); color: white;
             border-radius: 50%; display: flex; align-items: center; justify-content: center;
             font-size: 3rem; font-weight: bold; margin: 0 auto 2rem;
         }
+
         /* --- IDIOMAS --- */
         .pricing-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
         .price-card {
@@ -308,18 +361,23 @@
             border: 1px solid rgba(0,0,0,0.03); display: flex; flex-direction: column;
         }
         .price-card:hover { transform: translateY(-5px); }
+
         .price-header { padding: 2rem; text-align: center; color: white; }
         .price-header.japanese { background: linear-gradient(135deg, #FF4E50, #F9D423); }
         .price-header.french { background: linear-gradient(135deg, #0055A4, #0088cc); }
+
         .price-body { padding: 2rem; flex-grow: 1; display: flex; flex-direction: column; }
         .price-tag { font-size: 2.5rem; font-weight: 800; text-align: center; margin-bottom: 0.5rem; color: var(--secondary); }
+        
         .benefits-list li { margin-bottom: 15px; display: flex; align-items: flex-start; gap: 12px; font-size: 0.95rem; color: #666; }
+        
         .cta-card-btn {
             margin-top: auto; display: block; width: 100%; padding: 1rem;
             background: var(--secondary); color: var(--white); text-align: center;
             text-decoration: none; border-radius: 12px; font-weight: 600; transition: 0.3s;
         }
         .cta-card-btn:hover { background: var(--primary); transform: scale(1.02); }
+
         /* --- CONTACTO Y MAPA --- */
         .contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 2rem; }
         .map-wrapper {
@@ -333,6 +391,7 @@
             color: var(--secondary); margin-bottom: 1rem;
         }
         .contact-item:hover { transform: translateX(10px); background: #fffcfc; }
+
         .floating-wa {
             position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px;
             background: #25D366; color: white; border-radius: 50%; display: flex;
@@ -341,7 +400,9 @@
             transition: transform 0.3s; text-decoration: none;
         }
         .floating-wa:hover { transform: scale(1.1) rotate(10deg); }
+
         footer { background: var(--secondary); color: white; text-align: center; padding: 3rem; margin-top: 5rem; }
+
         /* --- Pop-up Modal --- */
         .modal {
             display: none;
@@ -376,6 +437,7 @@
             text-decoration: none;
             cursor: pointer;
         }
+
         /* --- Blog Section --- */
         .blog-grid {
             display: grid;
@@ -393,6 +455,7 @@
         .blog-card:hover {
             transform: translateY(-5px);
         }
+
         /* --- Formulario de Contacto --- */
         .contact-form {
             background: var(--white);
@@ -422,6 +485,7 @@
             border-radius: 50%;
             margin-bottom: 1rem;
         }
+
         @media (max-width: 768px) {
             .nav-links { gap: 5px; justify-content: center; margin-top: 15px; }
             nav { flex-direction: column; }
@@ -434,14 +498,16 @@
             .hero-banner { padding: 2rem 1rem; }
             .hero-banner h1 { font-size: 1.8rem; }
             .nav-links { flex-direction: column; gap: 10px; }
+            /* Ajuste para el logo en móviles */
+            .logo img { height: 50px; }
         }
     </style>
 </head>
 <body>
-    <!-- NAVEGACIÓN -->
+
     <nav>
         <div class="logo" onclick="showSection('home')">
-            <i class="fas fa-sun" style="margin-right: 8px;"></i> YOROKOBI <span>喜び</span>
+            <img src="Imagenes/logo.png" alt="Yorokobi Centro de Idiomas Logo">
         </div>
         <div class="nav-links">
             <button class="nav-btn active" onclick="showSection('home')" aria-label="Ir a Inicio">Inicio</button>
@@ -454,27 +520,22 @@
             <button class="nav-btn" onclick="showSection('blog')" aria-label="Ir a Blog">Blog</button>
         </div>
     </nav>
+
     <main>
-        <!-- SECCIÓN: INICIO -->
         <section id="home" class="active-section">
             <div class="hero-banner">
                 <div class="hero-content">
-                    <div class="amij-badge">
-                        <i class="fas fa-certificate"></i> Miembro Oficial de la AMIJ
-                    </div>
-                    <h1>CENTRO DE IDIOMAS YOROKOBI</h1>
-                    <h2>Aprende Japonés y Francés desde casa</h2>
-                   
                     <a href="https://wa.me/522471058977" class="whatsapp-main-btn" target="_blank">
                         <i class="fab fa-whatsapp"></i> Inscríbete por WhatsApp
                     </a>
                 </div>
             </div>
+
             <div class="info-grid">
                 <div class="info-text">
                     <h3>El futuro es Online</h3>
                     <p style="font-size: 1.1rem;">
-                        En Yorokobi rompemos fronteras. Desde Huamantla para el mundo, ofrecemos clases interactivas en vivo vía Zoom.
+                        En Yorokobi rompemos fronteras. Desde Huamantla para el mundo, ofrecemos clases interactivas en vivo vía Zoom. 
                         Nuestra metodología está diseñada para que sientas la cercanía de un salón de clases desde la comodidad de tu hogar.
                     </p>
                 </div>
@@ -482,7 +543,7 @@
                      <i class="fas fa-laptop-house" style="font-size: 10rem; color: var(--secondary); opacity: 0.1;"></i>
                 </div>
             </div>
-            <!-- METODOLOGÍA (NUEVO) -->
+
             <div class="methodology-box">
                 <div class="method-icon"><i class="fas fa-brain"></i></div>
                 <div>
@@ -490,7 +551,7 @@
                     <p>Utilizamos un enfoque comunicativo donde la gramática sirve a la conversación. No memorizas listas, aprendes a usar el idioma en situaciones reales desde la primera semana. Usamos materiales digitales exclusivos y pizarras interactivas.</p>
                 </div>
             </div>
-            <!-- TESTIMONIOS (NUEVO) -->
+
             <div class="testimonials-section">
                 <h2 style="color:var(--secondary); margin-bottom: 2rem;">Lo que dicen nuestros alumnos</h2>
                 <div class="testimonial-grid">
@@ -512,7 +573,7 @@
                 </div>
             </div>
         </section>
-        <!-- SECCIÓN: TEST DE NIVEL (NUEVA LÓGICA ALEATORIA) -->
+
         <section id="test">
             <div class="quiz-container">
                 <div id="quiz-screen">
@@ -520,17 +581,19 @@
                         <h2><i class="fas fa-puzzle-piece"></i> Test de Nivel Japonés</h2>
                         <p>10 preguntas aleatorias para medir tu conocimiento actual.</p>
                     </div>
-                   
+                    
                     <div class="progress-bar"><div class="progress-fill" id="progress"></div></div>
                     <div class="question-box">
                         <div class="question-text" id="question-text">Cargando pregunta...</div>
                         <div class="options-grid" id="options-container"></div>
                     </div>
+                    
                     <div class="quiz-footer">
                         <span id="q-counter">Pregunta 1 de 10</span>
                         <button class="next-btn" id="next-btn" onclick="nextQuestion()">Siguiente <i class="fas fa-arrow-right"></i></button>
                     </div>
                 </div>
+
                 <div id="result-screen" class="result-box">
                     <h2>¡Test Completado!</h2>
                     <p style="margin-bottom: 2rem;">Tu resultado preliminar es:</p>
@@ -545,13 +608,13 @@
                 </div>
             </div>
         </section>
-        <!-- SECCIÓN: FAQ (NUEVA) -->
+
         <section id="faq">
             <div class="hero-banner" style="padding: 3rem; margin-bottom: 3rem;">
                 <h1>Preguntas Frecuentes</h1>
                 <p>Resolvemos tus dudas antes de inscribirte</p>
             </div>
-           
+            
             <div style="max-width: 800px; margin: 0 auto;">
                 <div class="faq-item" onclick="toggleFaq(this)">
                     <div class="faq-question">¿Las clases son en vivo o grabadas? <i class="fas fa-chevron-down"></i></div>
@@ -571,12 +634,13 @@
                 </div>
             </div>
         </section>
-        <!-- SECCIÓN: NOSOTROS -->
+
         <section id="about">
             <div class="hero-banner" style="padding: 3rem; margin-bottom: 3rem;">
                 <h1>Nuestra Historia</h1>
                 <p style="color: #666;">Pasión por la enseñanza desde 2018</p>
             </div>
+
             <div style="max-width: 800px; margin: 0 auto;">
                 <div class="contact-item" style="border-left: 5px solid var(--primary);">
                     <div><h4 style="color:var(--primary)">2018: Inicios</h4><p>La enseñanza del idioma japonés en Huamantla inició en una escuela de idiomas privada, en esos días solo existían 3 alumnos estudiando el idioma, lamentablemente la economía para ellos no era buena y tuvieron que dejarlo, sin embargo se iniciaron las clases en casa del maestro y lograr que los chicos asistieron a su examen de certificación.</p></div>
@@ -597,20 +661,23 @@
                     <div><h4 style="color:var(--accent)">2023: Actualmente</h4><p>El Centro de Idiomas Yorokobi ha logrado estar en la lista oficial de las escuelas donde se imparte el idioma japonés en la página donde se registran los alumnos para hacer su examen de certificación. Actualmente en Yorokobi hay alumnos de diferentes partes de México, Ecuador, Perú, Chile, Bolivia, Guatemala, España y Japón. Además, el profesor y director del centro se ha mantenido activo en cursos que ha brindado Fundación Japón en México para la mejor enseñanza del idioma.</p></div>
                 </div>
             </div>
+            
             <div style="text-align: center; margin-top: 3rem; font-style: italic; color: var(--primary); font-size: 1.2rem;">
                 Centro de Idiomas Yorokobi desde 2018 🌟 Donde el aprendizaje se convierte en alegría y nace una sonrisa 🌟
             </div>
         </section>
-        <!-- SECCIÓN: JAPONÉS -->
+
         <section id="japanese">
             <div class="hero-banner" style="padding: 3rem; margin-bottom: 3rem;">
                 <h1>Idioma Japonés</h1>
                 <p style="color: #666;">Descubre el fascinante mundo del japonés con nosotros</p>
             </div>
+
             <div style="max-width: 800px; margin: 0 auto 3rem;">
                 <h3>C. Guillermo Ordaz</h3>
                 <p>Responsable del idioma Japonés</p>
                 <img src="https://lh3.googleusercontent.com/sitesv/AAzXCkdrMrOz9gXyqwmhya-CYVs8j80iQ05om7HimTfm01L4Z2mySXw16YgbJndlWD9Yvg840eQNOkI6A26_cXyNUB0xW4IrVRUfIkOHbdLm6VrkwtFV9AdCvGLXOee2RgUovuPuWrP239433VxLHhbXexLdsZxMudLUI0EOoyhzc3ArRzsAWmaGkc3WJManALR3JVULCKxn3cLNlkXVuhhiKqXHKOdSkapplpcW=w1280" alt="Foto del maestro de japonés Guillermo Ordaz" class="teacher-img" loading="lazy">
+                
                 <h4>FORMACIÓN</h4>
                 <ul>
                     <li>🎍 Técnico en sistemas computacionales. (Mantenimiento y actualización de computadoras)</li>
@@ -619,14 +686,18 @@
                     <li>🎍 2011 Me certifiqué en el nivel N4 del idioma japonés, en 2018 vuelvo a hacer exámenes de certificación del para estar actualizado nuevamente con el idioma japonés</li>
                     <li>🎍 2020 a la fecha me integré a la Asociación Mexicana del Idioma Japonés A.C. e inicio cursos y talleres que brinda Fundación Japón para actualizar mi método de enseñanza aprendizaje del idioma japonés.</li>
                 </ul>
+
                 <h4>NIVELES QUE SE IMPARTEN</h4>
                 <h5>Básico</h5>
                 <p>En este curso iniciamos desde cero y lo que vemos es hiragana, katakana y principalmente nos enfocamos en la adquisición de la lecto-escritura. Así mismo los chicos adquieren conocimiento de vocabulario de diversos temas y usan gramática sencilla para darle uso al vocabulario aprendido. Este nivel tiene un equivalente al NIVEL A1.1 del Marco Común Europeo de Referencia para las lenguas.</p>
+                
                 <h5>N5</h5>
                 <p>Es el primer nivel de certificación del idioma japonés. Los alumnos se prepararán para realizar el examen Nihongo nōryoku shiken, cuya abreviación es JLPT por sus siglas en inglés, es un examen de fluidez y conocimientos del idioma japonés. Aquí vemos gramática en 25 lecciones de la 1 a 25 usando el libro de Minna no Nihongo y se estudian los primeros 80 - 100 kanjis para este nivel.</p>
+                
                 <h5>N4</h5>
                 <p>Es el segundo nivel de certificación del idioma japonés. Los alumnos se prepararán para realizar el examen Nihongo nōryoku shiken, cuya abreviación es JLPT por sus siglas en inglés, es un examen de fluidez y conocimientos del idioma japonés. Aquí vemos gramática en 25 lecciones de la 26 a 50 usando el libro de Minna no Nihongo y se estudian 160 - 200 kanjis para este nivel.</p>
             </div>
+
             <div class="pricing-container">
                 <div class="price-card">
                     <div class="price-header japanese"><h3>Curso Básico</h3><p>Inicia tu camino</p></div>
@@ -645,6 +716,7 @@
                         <a href="https://wa.me/522471058977" class="cta-card-btn">Inscribirme</a>
                     </div>
                 </div>
+
                 <div class="price-card">
                     <div class="price-header japanese"><h3>Nivel N5</h3><p>Principiante JLPT</p></div>
                     <div class="price-body">
@@ -662,6 +734,7 @@
                         <a href="https://wa.me/522471058977" class="cta-card-btn">Inscribirme</a>
                     </div>
                 </div>
+
                 <div class="price-card">
                     <div class="price-header japanese"><h3>Nivel N4</h3><p>Intermedio Básico</p></div>
                     <div class="price-body">
@@ -680,20 +753,23 @@
                     </div>
                 </div>
             </div>
+            
             <div style="text-align: center; margin-top: 3rem; font-style: italic; color: var(--primary); font-size: 1.2rem;">
                 Centro de Idiomas Yorokobi desde 2018 🌟 Donde el aprendizaje se convierte en alegría y nace una sonrisa 🌟
             </div>
         </section>
-        <!-- SECCIÓN: FRANCÉS -->
+
         <section id="french">
             <div class="hero-banner" style="padding: 3rem; margin-bottom: 3rem;">
                 <h1>Idioma Francés</h1>
                 <p style="color: #666;">Explora el encanto del francés con nuestra experta</p>
             </div>
+
             <div style="max-width: 800px; margin: 0 auto 3rem;">
                 <h3>C. Daniela Paz</h3>
                 <p>Responsable del idioma Francés</p>
                 <img src="https://lh3.googleusercontent.com/sitesv/AAzXCkesdi2V61qIeV9l2X_s2P1WJ9F66xeofzR05NEzt_U-yuu9XcnYMr46WaiUv5OOaYkmodnniTAz9bp_EUcPfzHn0c7y6UNNy_cpIZQjvffDed-qhqbdODqaip-auzS87teesnEfBSa8kHi5P9uHLughyZaYTIKO4E_NKslKqbYytWRqw7ESKtf38EqT64Khvu0hhylPnpvUhO15Ocqome9n_4u2JmlwPMJzOJ0=w1280" alt="Foto de la maestra de francés Daniela Paz" class="teacher-img" loading="lazy">
+                
                 <h4>FORMACIÓN</h4>
                 <ul>
                     <li>🌸 Maestra en educación por el ITESM.</li>
@@ -701,11 +777,13 @@
                     <li>🌸 Experiencia de preescolar a empresarios.</li>
                     <li>🌸 Traductor francés-español.</li>
                 </ul>
+
                 <h4>NIVELES QUE SE IMPARTEN</h4>
                 <p>Puede ser tu primer contacto con el idioma, o quizá, puedes entender frases e instrucciones básicas. Puedes interactuar en una forma muy simple y usar frases incompletas, sin una buena estructura gramatical.</p>
                 <p>Dominas frases sencillas y sabe escribirlas. Además, entiendes expresiones relacionadas con temas específicos y que te son familiares.</p>
                 <p>Captas el significado general de lo que te dicen, sin embargo sueles tener dificultades. Puedes leer y escribir textos sencillos y eres capaz de mantener una conversación básica.</p>
             </div>
+
             <div class="pricing-container" style="justify-content: center; display: flex;">
                 <div class="price-card" style="max-width: 400px; width: 100%;">
                     <div class="price-header french"><h3>Francés A1</h3><p>El idioma del amor</p></div>
@@ -726,9 +804,10 @@
                 </div>
             </div>
         </section>
-        <!-- SECCIÓN: CONTACTO -->
+
         <section id="contact">
             <div class="hero-banner" style="padding: 2rem; margin-bottom: 2rem;"><h2>Contáctanos</h2><p>Visítanos en Huamantla o escríbenos</p></div>
+            
             <div class="contact-grid">
                 <div class="contact-info">
                     <a href="https://wa.me/5212471517944" target="_blank" class="contact-item">
@@ -744,10 +823,12 @@
                         <div><h4>Dirección</h4><p style="font-size:0.85rem;">Calle límites de Yancuitlalpan #25, Huamantla.</p></div>
                     </div>
                 </div>
+                
                 <div class="map-wrapper">
                     <iframe src="https://www.google.com/maps?q=Calle+limites+de+Yancuitlalpan+25+Barrio+de+Santa+Maria+Yancuitlalpan+Huamantla+Tlaxcala&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
+
             <div class="contact-form">
                 <h3>Envíanos un mensaje</h3>
                 <form id="contactForm">
@@ -758,12 +839,13 @@
                 </form>
             </div>
         </section>
-        <!-- SECCIÓN: BLOG -->
+
         <section id="blog">
             <div class="hero-banner" style="padding: 3rem; margin-bottom: 3rem;">
                 <h1>Blog</h1>
                 <p style="color: #666;">Tips, noticias y artículos sobre idiomas</p>
             </div>
+            
             <div class="blog-grid">
                 <div class="blog-card" onclick="openArticleModal('jlpt-article')">
                     <h3>Guía Magna del JLPT N5 en México 2025: Compendio Exhaustivo de Estrategias, Logística y Preparación</h3>
@@ -771,343 +853,250 @@
                 </div>
             </div>
         </section>
+
     </main>
-   
+    
     <a href="https://wa.me/522471058977" class="floating-wa" target="_blank" title="Contáctanos"><i class="fab fa-whatsapp"></i></a>
+
     <footer>
-        <p>&copy; 2025 Yorokobi Centro de Idiomas. Todos los derechos reservados.</p>
+        <p>© 2025 Yorokobi Centro de Idiomas. Todos los derechos reservados.</p>
     </footer>
-    <!-- Modal para Artículo de Blog -->
+
     <div id="articleModal" class="modal">
         <div class="modal-content" style="max-width: 1000px; padding: 0; overflow: auto; text-align: left;">
-            <span class="close" onclick="closeArticleModal()" style="position: absolute; top: 10px; right: 10px; z-index: 10;">&times;</span>
+            <span class="close" onclick="closeArticleModal()" style="position: absolute; top: 10px; right: 10px; z-index: 10;">×</span>
+            
             <div id="jlpt-article" style="display: none;">
-<article class="max-w-4xl mx-auto px-6 py-12 bg-white shadow-xl my-10 rounded-xl article-fade-in">
-        <header class="mb-12 border-b pb-8">
-            <span class="inline-block bg-red-100 text-jp-red text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-wide">Educación & Idiomas</span>
-            <h1 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                Guía Magna del JLPT N5 en México 2025: Compendio Exhaustivo
-            </h1>
-            <p class="text-xl text-gray-500 font-light italic">
-                Estrategias, Logística y Preparación Académica para el Noken.
-            </p>
-        </header>
-        <section class="prose prose-lg max-w-none text-gray-700 mb-12">
-            <h2 class="text-2xl font-bold text-gray-900 mb-4">Introducción: El Horizonte del Idioma Japonés en el Contexto Mexicano</h2>
-            <p class="mb-4">
-                La certificación de la competencia en el idioma japonés se ha consolidado como un activo estratégico de incalculable valor en el panorama profesional y académico de México. En un entorno globalizado donde las relaciones bilaterales entre México y Japón han trascendido el intercambio puramente comercial —arraigado profundamente en la industria automotriz del Bajío y la manufactura tecnológica en el norte— para permear las esferas culturales y educativas, el <strong>Japanese Language Proficiency Test (JLPT)</strong>, conocido localmente como Noken (del japonés Nihongo Nōryoku Shiken), emerge como el estándar de oro indiscutible.
-            </p>
-            <p class="mb-4">
-                Este informe, estructurado como el recurso definitivo para el aspirante, despliega un análisis microscópico sobre la preparación para el nivel N5, el primer escalón en esta odisea lingüística, enfocado exclusivamente en la realidad operativa, logística y académica de México para el ciclo 2025.
-            </p>
-            <p class="bg-gray-50 p-4 border-l-4 border-jp-red rounded-r">
-                <strong>Nota Importante:</strong> El nivel N5 no debe subestimarse bajo la etiqueta de "básico". Representa el umbral crítico donde el estudiante abandona la condición de observador externo para internalizar la lógica estructural de una lengua aglutinante, dominar dos sistemas de escritura fonética (Hiragana y Katakana) y adentrarse en la complejidad logográfica de los Kanji.
-            </p>
-        </section>
-        <section class="mb-16">
-            <h2 class="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-jp-red pb-2 inline-block">
-                Capítulo I: Anatomía y Arquitectura del JLPT N5
-            </h2>
-            <p class="mb-6 text-gray-700">
-                Para conquistar el examen, es imperativo diseccionar su estructura con precisión quirúrgica. El JLPT N5 es una evaluación estandarizada de opción múltiple, diseñada meticulosamente por la Japan Foundation y Japan Educational Exchanges and Services (JEES) para medir la comprensión pasiva del idioma. A diferencia de otras certificaciones occidentales, el JLPT no evalúa la producción oral (entrevista) ni la producción escrita libre (ensayo), centrando su rigor en la precisión gramatical, la riqueza léxica y la agudeza auditiva.
-            </p>
-            <h3 class="text-xl font-bold text-gray-800 mb-4">1.1 Competencia Lingüística y Alcance Académico</h3>
-            <div class="overflow-x-auto mb-8 bg-white border rounded-lg shadow-sm">
-                <table class="min-w-full divide-y divide-gray-200">
-                    <thead class="bg-gray-800 text-white">
-                        <tr>
-                            <th class="px-6 py-3 text-left text-xs font-bold uppercase tracking-wider">Dominio</th>
-                            <th class="px-6 py-3 text-left text-xs font-bold uppercase tracking-wider">Competencia Específica Requerida</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-gray-200">
-                        <tr>
-                            <td class="px-6 py-4 font-bold text-jp-red">Escritura</td>
-                            <td class="px-6 py-4">Dominio total de Hiragana y Katakana. Reconocimiento de aprox. 80-100 Kanjis básicos.</td>
-                        </tr>
-                        <tr class="bg-gray-50">
-                            <td class="px-6 py-4 font-bold text-jp-red">Vocabulario</td>
-                            <td class="px-6 py-4">Manejo de un léxico de entre 800 y 1000 palabras fundamentales (familia, tiempo, direcciones, verbos cotidianos).</td>
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-4 font-bold text-jp-red">Gramática</td>
-                            <td class="px-6 py-4">Comprensión de partículas básicas (wa, ga, wo, ni, de, e), conjugación verbal (formas masu, te, nai, ta) y adjetivos (i/na).</td>
-                        </tr>
-                        <tr class="bg-gray-50">
-                            <td class="px-6 py-4 font-bold text-jp-red">Pragmática</td>
-                            <td class="px-6 py-4">Capacidad para entender saludos, presentaciones y transacciones simples en tiendas o escuelas.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <h3 class="text-xl font-bold text-gray-800 mb-4">1.2 Desglose Estructural: Tiempos y Secciones</h3>
-           
-            <div class="space-y-6 mb-8">
-                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
-                    <h4 class="font-bold text-lg text-jp-red mb-2">Sección 1: Conocimiento del Lenguaje (Vocabulario) - 20 min</h4>
-                    <p class="text-sm text-gray-600 mb-3">Naturaleza: Velocidad pura. Menos de un minuto por pregunta.</p>
-                    <ul class="custom-list text-sm text-gray-700 pl-4">
-                        <li><strong>Lectura de Kanji:</strong> Se presenta una palabra en Kanji y se debe elegir su lectura correcta en Hiragana. (Ej. Ver "中" y elegir "naka").</li>
-                        <li><strong>Ortografía:</strong> Se presenta una palabra en Hiragana y se debe elegir el Kanji o Katakana correcto.</li>
-                        <li><strong>Contexto:</strong> Llenar el espacio en blanco con la palabra adecuada semánticamente.</li>
-                        <li><strong>Paráfrasis:</strong> Elegir la oración que tiene el mismo significado que la oración muestra.</li>
-                    </ul>
-                </div>
-                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
-                    <h4 class="font-bold text-lg text-jp-red mb-2">Sección 2: Gramática y Lectura - 40 min</h4>
-                    <p class="text-sm text-gray-600 mb-3">Naturaleza: Análisis lógico y comprensión lectora.</p>
-                    <ul class="custom-list text-sm text-gray-700 pl-4">
-                        <li><strong>Gramática de Sentencia:</strong> Elegir la forma gramatical correcta.</li>
-                        <li><strong>Composición de Sentencia (La Estrella):</strong> Ordenar cuatro fragmentos de una oración y señalar qué va en la posición marcada con una estrella. Ejercicio notoriamente difícil.</li>
-                        <li><strong>Comprensión Lectora (Dokkai):</strong> Textos cortos (80 caracteres) y medios (250 caracteres), y búsqueda de información en carteles/menús.</li>
-                    </ul>
-                </div>
-                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
-                    <h4 class="font-bold text-lg text-jp-red mb-2">Sección 3: Comprensión Auditiva (Choukai) - 30 min</h4>
-                    <p class="text-sm text-gray-600 mb-3">Naturaleza: Atención sostenida. El audio se reproduce <strong>una sola vez</strong>.</p>
-                    <ul class="custom-list text-sm text-gray-700 pl-4">
-                        <li><strong>Comprensión de Tareas:</strong> ¿Qué debe hacer el personaje a continuación?</li>
-                        <li><strong>Puntos Clave:</strong> ¿Quién va? ¿A qué hora? ¿Qué color?</li>
-                        <li><strong>Expresiones Verbales:</strong> Elegir la frase correcta para una ilustración (ej. "Itadakimasu").</li>
-                        <li><strong>Respuesta Rápida:</strong> Se escucha una frase corta y se elige la respuesta lógica inmediata.</li>
-                    </ul>
-                </div>
-            </div>
-            <h3 class="text-xl font-bold text-gray-800 mb-4">1.3 El Sistema de Puntuación: "Scaled Score"</h3>
-            <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-8">
-                <p class="mb-2 text-gray-800">El JLPT utiliza un sistema estadístico complejo. El valor de cada pregunta no es fijo. Para aprobar el N5 en 2025, debes superar dos barreras simultáneas:</p>
-                <ul class="list-disc ml-5 text-gray-700">
-                    <li><strong>Puntuación Total:</strong> Mínimo 80 puntos sobre 180.</li>
-                    <li><strong>Barrera de Corte por Sección:</strong>
-                        <ul class="list-circle ml-5 mt-1">
-                            <li>Lenguaje y Lectura: Mínimo 38/120.</li>
-                            <li>Comprensión Auditiva: Mínimo 19/60.</li>
+                <article class="max-w-4xl mx-auto px-6 py-12 bg-white shadow-xl my-10 rounded-xl article-fade-in">
+                    <header class="mb-10 border-b border-gray-200 pb-8">
+                        <span class="inline-block bg-red-100 text-japan-red text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-wide">Educación & Idiomas</span>
+                        <h1 class="text-3xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+                            Guía Magna del JLPT N5 en México 2025: Compendio Exhaustivo
+                        </h1>
+                        <p class="text-xl text-gray-500 font-light italic">
+                            Estrategias, Logística y Preparación Académica para el Noken.
+                        </p>
+                    </header>
+                
+                    <section class="mb-12">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-4">Introducción: El Horizonte del Idioma Japonés en el Contexto Mexicano</h2>
+                        <p class="mb-4 text-gray-700">
+                            La certificación de la competencia en el idioma japonés se ha consolidado como un activo estratégico de incalculable valor en el panorama profesional y académico de México. En un entorno globalizado donde las relaciones bilaterales entre México y Japón han trascendido el intercambio puramente comercial —arraigado profundamente en la industria automotriz del Bajío y la manufactura tecnológica en el norte— para permear las esferas culturales y educativas, el <strong>Japanese Language Proficiency Test (JLPT)</strong>, conocido localmente como Noken, emerge como el estándar de oro indiscutible.
+                        </p>
+                        <p class="mb-4 text-gray-700">
+                            Este informe, estructurado como el recurso definitivo para el aspirante, despliega un análisis microscópico sobre la preparación para el nivel N5, el primer escalón en esta odisea lingüística, enfocado exclusivamente en la realidad operativa, logística y académica de México para el ciclo 2025.
+                        </p>
+                        <div class="bg-gray-50 p-4 border-l-4 border-japan-red rounded-r">
+                            <p class="text-sm text-gray-700"><strong>Nota Importante:</strong> El nivel N5 no debe subestimarse bajo la etiqueta de "básico". Representa el umbral crítico donde el estudiante abandona la condición de observador externo para internalizar la lógica estructural de una lengua aglutinante.</p>
+                        </div>
+                    </section>
+                
+                    <section class="mb-12">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-6 pb-2 border-b-2 border-japan-red inline-block">
+                            Capítulo I: Anatomía y Arquitectura del JLPT N5
+                        </h2>
+                        <p class="mb-6 text-gray-700">
+                            Para conquistar el examen, es imperativo diseccionar su estructura. El JLPT N5 es una evaluación estandarizada de opción múltiple diseñada para medir la comprensión pasiva del idioma (lectura y escucha), sin entrevistas ni ensayos.
+                        </p>
+                
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">1.1 Competencia Lingüística Requerida</h3>
+                        <div class="overflow-x-auto mb-8 border rounded-lg">
+                            <table class="min-w-full divide-y divide-gray-200 text-sm">
+                                <thead class="bg-gray-800 text-white">
+                                    <tr>
+                                        <th class="px-4 py-3 text-left font-bold uppercase">Dominio</th>
+                                        <th class="px-4 py-3 text-left font-bold uppercase">Competencia Específica</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-gray-200 bg-white">
+                                    <tr>
+                                        <td class="px-4 py-3 font-bold text-japan-red">Escritura</td>
+                                        <td class="px-4 py-3 text-gray-700">Dominio total de Hiragana y Katakana. 80-100 Kanjis básicos.</td>
+                                    </tr>
+                                    <tr class="bg-gray-50">
+                                        <td class="px-4 py-3 font-bold text-japan-red">Vocabulario</td>
+                                        <td class="px-4 py-3 text-gray-700">Léxico de 800 a 1000 palabras fundamentales.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-3 font-bold text-japan-red">Gramática</td>
+                                        <td class="px-4 py-3 text-gray-700">Partículas (wa, ga, ni, de), conjugaciones (masu, te, nai, ta).</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">1.2 Desglose Estructural</h3>
+                        <ul class="list-none space-y-4 mb-6">
+                            <li class="bg-gray-50 p-4 rounded border">
+                                <strong class="text-japan-red">1. Vocabulario (20 min):</strong> <span class="text-gray-700">Velocidad pura. Lectura de Kanjis y ortografía. Menos de un minuto por pregunta.</span>
+                            </li>
+                            <li class="bg-gray-50 p-4 rounded border">
+                                <strong class="text-japan-red">2. Gramática y Lectura (40 min):</strong> <span class="text-gray-700">Análisis lógico y textos cortos. Incluye el ejercicio de ordenar oraciones ("La Estrella").</span>
+                            </li>
+                            <li class="bg-gray-50 p-4 rounded border">
+                                <strong class="text-japan-red">3. Auditiva (30 min):</strong> <span class="text-gray-700">Atención sostenida. El audio se reproduce <strong>una sola vez</strong>.</span>
+                            </li>
                         </ul>
-                    </li>
-                </ul>
-                <p class="mt-2 text-sm text-red-600 font-bold">Implicación Crítica: Si obtienes puntuación perfecta en gramática pero 18 puntos en auditiva, reprobarás.</p>
-            </div>
-        </section>
-        <section class="mb-16">
-            <h2 class="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-jp-red pb-2 inline-block">
-                Capítulo II: Geografía y Logística del JLPT en México 2025
-            </h2>
-            <p class="mb-6 text-gray-700">
-                La aplicación del JLPT en México es un despliegue logístico coordinado por diversas instituciones bajo la supervisión de la Fundación Japón. A continuación, el calendario operativo y análisis de sedes.
-            </p>
-            <h3 class="text-xl font-bold text-gray-800 mb-4">2.1 Calendario Operativo 2025</h3>
-            <div class="grid md:grid-cols-2 gap-6 mb-8">
-                <div class="bg-blue-50 p-5 rounded-lg border border-blue-200">
-                    <h4 class="font-bold text-blue-800 mb-2">Convocatoria Verano (Julio)</h4>
-                    <p class="text-sm mb-2"><strong>Fecha del Examen:</strong> Domingo 6 de julio de 2025.</p>
-                    <p class="text-sm mb-2"><strong>Disponibilidad:</strong> Limitada (Mérida y Aguascalientes confirmadas). CDMX a menudo no abre esta fecha para todos los niveles.</p>
-                    <p class="text-sm"><strong>Resultados:</strong> Finales de agosto.</p>
-                </div>
-                <div class="bg-red-50 p-5 rounded-lg border border-red-200">
-                    <h4 class="font-bold text-red-800 mb-2">Convocatoria Invierno (Diciembre)</h4>
-                    <p class="text-sm mb-2"><strong>Fecha del Examen:</strong> Domingo 7 de diciembre de 2025.</p>
-                    <p class="text-sm mb-2"><strong>Disponibilidad:</strong> Masiva (CDMX, MTY, Ags, Mérida, Salamanca).</p>
-                    <p class="text-sm bg-white p-2 border rounded mt-2">
-                        <strong>Ventana de Inscripción:</strong><br>
-                        Abre: Jueves 7 de agosto, 08:00 hrs.<br>
-                        Cierra: Miércoles 27 de agosto, 23:59 hrs.
-                    </p>
-                    <p class="text-xs text-red-600 font-bold mt-2">Advertencia: El cupo N5 en CDMX suele agotarse en 48 horas.</p>
-                </div>
-            </div>
-            <h3 class="text-xl font-bold text-gray-800 mb-4">2.2 Análisis Detallado de las Sedes</h3>
-            <ul class="space-y-4 text-gray-700 mb-8">
-                <li>
-                    <strong>Ciudad de México (ICMJ):</strong> Debido al volumen, NO se realiza en Coyoacán. Usualmente se usa la <em>Universidad La Salle (Campus Condesa)</em>. Es la sede más competitiva y estresante.
-                </li>
-                <li>
-                    <strong>Monterrey (ITESM):</strong> Campus Monterrey, Av. Eugenio Garza Sada 2501. Instalaciones de primer nivel con aire acondicionado potente (factor a considerar para la vestimenta). Contacto: <em>jlptmty@gmail.com</em>.
-                </li>
-                <li>
-                    <strong>Aguascalientes (CENDICS):</strong> Nodo vital por la presencia de Nissan. Sede en instalaciones de CENDICS o alternas en Av. Eugenio Garza Sada 124-D. Contacto: <em>jlpt@cendics.com</em>.
-                </li>
-                <li>
-                    <strong>Mérida (IAP):</strong> Av. Del Rogers Hall no. 144, Fracc. Buenavista. Ideal para candidatos de Cancún o Tabasco. Menos caótica.
-                </li>
-                <li>
-                    <strong>Salamanca:</strong> Corredor automotriz. Verificar si la sede se activa en Salamanca ciudad o ciudad vecina.
-                </li>
-                <li>
-                    <strong>Guadalajara:</strong> Situación intermitente. Contactar al CEJA de la UDG para confirmar disponibilidad local.
-                </li>
-            </ul>
-            <h3 class="text-xl font-bold text-gray-800 mb-4">2.3 Estructura de Costos 2025</h3>
-            <div class="bg-white border rounded shadow-sm p-4 w-full md:w-1/2">
-                <table class="w-full text-sm text-left">
-                    <tr class="border-b">
-                        <td class="py-2 font-bold">Nivel N5</td>
-                        <td class="py-2 text-right">$1,300.00 - $1,500.00 MXN</td>
-                    </tr>
-                    <tr class="border-b">
-                        <td class="py-2 font-bold">Nivel N4</td>
-                        <td class="py-2 text-right">$1,350.00 - $1,550.00 MXN</td>
-                    </tr>
-                    <tr>
-                        <td class="py-2 font-bold">Nivel N3</td>
-                        <td class="py-2 text-right">$1,450.00 - $1,650.00 MXN</td>
-                    </tr>
-                </table>
-                <p class="text-xs text-gray-500 mt-2">*Precios son proyecciones basadas en incrementos recientes.</p>
-            </div>
-        </section>
-        <section class="mb-16">
-            <h2 class="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-jp-red pb-2 inline-block">
-                Capítulo III: El Laberinto Burocrático de la Inscripción
-            </h2>
-            <p class="mb-6 text-gray-700">
-                El proceso de registro en México (generalmente en <code>www.jlpt.mx</code>) requiere precisión.
-            </p>
-            <h3 class="text-xl font-bold text-gray-800 mb-4">3.1 Fase de Preparación (Antes del 7 de Agosto)</h3>
-            <ul class="custom-list text-gray-700 mb-6">
-                <li><strong>Fotografía Digital:</strong> Formato JPG/PNG. Fondo blanco o claro, rostro despejado, vertical (tipo pasaporte). <span class="text-red-600 font-bold">Error Común:</span> Subir selfies recortadas; esto es motivo de rechazo administrativo.</li>
-                <li><strong>Datos de Identificación:</strong> El sistema no acepta acentos ni la letra "ñ" (ej. "Muñoz" debe registrarse como "Munoz").</li>
-            </ul>
-            <h3 class="text-xl font-bold text-gray-800 mb-4">3.2 Gestión del Pago: OXXO y Bancarización</h3>
-            <div class="bg-gray-800 text-white p-6 rounded-lg mb-6">
-                <h4 class="text-lg font-bold text-yellow-400 mb-2">Advertencia Vital sobre OXXO</h4>
-                <p class="mb-2">Si realizas el pago en OXXO, el ticket se imprime en papel térmico que se borra con el calor o el tiempo. <strong>Debes tomar una fotografía clara y escanear el ticket inmediatamente.</strong></p>
-                <p class="text-sm text-gray-300">Ese papelito es el único comprobante de pago válido ante cualquier reclamación. Sin él, pierdes tu dinero.</p>
-            </div>
-           
-            <h3 class="text-xl font-bold text-gray-800 mb-4">3.3 El Proceso en el Portal</h3>
-            <ol class="list-decimal list-inside text-gray-700 space-y-2">
-                <li>Registro de Usuario en jlpt.mx.</li>
-                <li>Selección de Sede y Nivel (No hay cambios posteriores).</li>
-                <li>Generación de Formato de Pago y Pago (SPEI/Ventanilla/OXXO).</li>
-                <li>Carga de Comprobantes (Foto ID + Foto Pago).</li>
-                <li><strong>Validación:</strong> Esperar revisión manual.</li>
-                <li><strong>Recepción del Voucher:</strong> Noviembre.</li>
-                <li><strong>Contraseña de Resultados:</strong> Crear y guardar un PIN de 8 dígitos.</li>
-            </ol>
-        </section>
-        <section class="mb-16">
-            <h2 class="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-jp-red pb-2 inline-block">
-                Capítulo IV: El Arsenal del Estudiante (Materiales en México)
-            </h2>
-           
-            <div class="grid md:grid-cols-2 gap-8 mb-8">
-                <div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Los Titanes: Libros de Texto</h3>
-                    <div class="space-y-4">
-                        <div class="border-l-4 border-blue-500 pl-4 py-1">
-                            <h4 class="font-bold">Minna no Nihongo (Shokyu I)</h4>
-                            <p class="text-sm text-gray-600">Filosofía: Inmersión total y rigor. Estándar en el ICMJ. Contras: Árido y repetitivo. Costo aprox: $800-$1,200 MXN.</p>
+                
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">1.3 El Sistema de Puntuación</h3>
+                        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                            <p class="font-bold text-yellow-800 mb-2">Advertencia de Reprobación</p>
+                            <p class="text-sm text-yellow-800">
+                                Debes aprobar cada sección por separado. Si sacas 100 en gramática pero <strong>menos de 19/60</strong> en la sección auditiva, repruebas todo el examen.
+                            </p>
                         </div>
-                        <div class="border-l-4 border-orange-500 pl-4 py-1">
-                            <h4 class="font-bold">Genki I (3ra Edición)</h4>
-                            <p class="text-sm text-gray-600">Filosofía: Comunicativo. Explicaciones en inglés. Curva de aprendizaje suave. Disponible en Amazon.</p>
+                    </section>
+                
+                    <section class="mb-12">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-6 pb-2 border-b-2 border-japan-red inline-block">
+                            Capítulo II: Geografía y Logística 2025
+                        </h2>
+                
+                        <div class="grid md:grid-cols-2 gap-6 mb-8">
+                            <div class="bg-white p-5 rounded-lg border shadow-sm">
+                                <h4 class="font-bold text-blue-800 mb-2 text-lg">Convocatoria Verano</h4>
+                                <p class="text-sm text-gray-700"><strong>Fecha:</strong> Domingo 6 de julio de 2025.</p>
+                                <p class="text-sm mt-2 text-gray-600">Sedes limitadas (Mérida y Aguascalientes). Ideal para evitar aglomeraciones.</p>
+                            </div>
+                            <div class="bg-white p-5 rounded-lg border shadow-sm border-red-100">
+                                <h4 class="font-bold text-japan-red mb-2 text-lg">Convocatoria Invierno</h4>
+                                <p class="text-sm text-gray-700"><strong>Fecha:</strong> Domingo 7 de diciembre de 2025.</p>
+                                <div class="mt-3 bg-red-50 p-2 rounded text-xs text-red-900">
+                                    <strong>Inscripciones:</strong><br>
+                                    Del 7 de Agosto (08:00) al 27 de Agosto.
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Preparación Técnica (Taisaku)</h3>
-                    <ul class="custom-list text-sm text-gray-700">
-                        <li><strong>Nihongo Sou Matome N5:</strong> Plan de 6 semanas. Muy visual. Ideal para repaso final.</li>
-                        <li><strong>TRY! N5:</strong> Gramática con ejercicios estilo JLPT.</li>
-                        <li><strong>Goukaku Dekiru N4/N5:</strong> Libro de "fuerza bruta" con cientos de ejercicios para ganar resistencia.</li>
-                    </ul>
-                </div>
+                
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Sedes Principales</h3>
+                        <ul class="list-disc pl-5 space-y-2 mb-6 text-gray-700">
+                            <li><strong>CDMX:</strong> Alta demanda. Sede externa (usualmente La Salle).</li>
+                            <li><strong>Monterrey:</strong> ITESM Campus Monterrey. Aire acondicionado muy frío.</li>
+                            <li><strong>Aguascalientes:</strong> Nodo industrial automotriz.</li>
+                            <li><strong>Mérida:</strong> Sede tranquila en el sureste (IAP).</li>
+                        </ul>
+                
+                        <p class="font-bold text-gray-800">Costo Estimado N5:</p>
+                        <p class="text-gray-600 mb-6">$1,300.00 - $1,500.00 MXN.</p>
+                    </section>
+                
+                    <section class="mb-12">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-6 pb-2 border-b-2 border-japan-red inline-block">
+                            Capítulo III: Inscripción y Pagos
+                        </h2>
+                        <p class="mb-4 text-gray-700">El portal oficial es <code>www.jlpt.mx</code>. Evita errores fatales:</p>
+                
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <span class="flex-shrink-0 h-6 w-6 bg-red-100 text-japan-red rounded-full flex items-center justify-center font-bold text-xs mr-3 mt-1">1</span>
+                                <div>
+                                    <strong class="text-gray-900">La Foto:</strong>
+                                    <p class="text-sm text-gray-600">Fondo blanco, tipo pasaporte digital. Las selfies son motivo de rechazo.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="flex-shrink-0 h-6 w-6 bg-red-100 text-japan-red rounded-full flex items-center justify-center font-bold text-xs mr-3 mt-1">2</span>
+                                <div>
+                                    <strong class="text-gray-900">Pago en OXXO (Vital):</strong>
+                                    <p class="text-sm text-gray-600">El ticket térmico se borra. <strong>Escanéalo inmediatamente</strong> al salir de la tienda. Es tu único comprobante.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="flex-shrink-0 h-6 w-6 bg-red-100 text-japan-red rounded-full flex items-center justify-center font-bold text-xs mr-3 mt-1">3</span>
+                                <div>
+                                    <strong class="text-gray-900">Datos:</strong>
+                                    <p class="text-sm text-gray-600">No uses acentos ni "ñ" en el registro (ej. pon "Munoz").</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section class="mb-12">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-6 pb-2 border-b-2 border-japan-red inline-block">
+                            Capítulo IV: Materiales (El Arsenal)
+                        </h2>
+                        <p class="mb-6 text-gray-700">Disponibles en NBK Libros (CDMX) o Amazon.</p>
+                        
+                        <div class="grid md:grid-cols-2 gap-4 mb-6">
+                            <div class="border p-4 rounded hover:bg-gray-50">
+                                <h4 class="font-bold text-blue-900">Minna no Nihongo</h4>
+                                <p class="text-sm text-gray-600">Estricto y académico. Inmersión total. Requiere libro de notas gramaticales.</p>
+                            </div>
+                            <div class="border p-4 rounded hover:bg-gray-50">
+                                <h4 class="font-bold text-orange-700">Genki I (3ra Ed)</h4>
+                                <p class="text-sm text-gray-600">Amigable y comunicativo. Explicaciones claras en inglés.</p>
+                            </div>
+                            <div class="border p-4 rounded hover:bg-gray-50 md:col-span-2">
+                                <h4 class="font-bold text-green-700">Libros de Técnica (Taisaku)</h4>
+                                <p class="text-sm text-gray-600"><em>Nihongo Sou Matome N5</em> (Repaso visual de 6 semanas) o <em>Goukaku Dekiru</em> (Ejercicios intensivos).</p>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section class="mb-12">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-6 pb-2 border-b-2 border-japan-red inline-block">
+                            Capítulo V: Estrategia de Estudio
+                        </h2>
+                        <ul class="space-y-4 list-decimal pl-5 text-gray-700">
+                            <li><strong>Fase 1 (Meses 1-2):</strong> Dominio absoluto de Hiragana/Katakana y primeras 400 palabras.</li>
+                            <li><strong>Fase 2 (Meses 3-4):</strong> Gramática (Partículas y Conjugaciones TE, NAI, TA) y Kanjis (lecturas On/Kun).</li>
+                            <li><strong>Fase 3 (Meses 5-6):</strong> Simulacros cronometrados con reloj analógico y hojas de burbujas.</li>
+                        </ul>
+                    </section>
+                
+                    <section class="mb-12">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-6 pb-2 border-b-2 border-japan-red inline-block">
+                            Capítulo VI: El Día del Examen
+                        </h2>
+                        <div class="bg-gray-100 p-6 rounded-lg">
+                            <h3 class="font-bold text-lg mb-4 text-gray-900">Kit de Supervivencia</h3>
+                            <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-gray-700">
+                                <li class="flex items-center">✅ Test Voucher Impreso</li>
+                                <li class="flex items-center">✅ Identificación Oficial (INE)</li>
+                                <li class="flex items-center">✅ Lápices de madera HB (No portaminas)</li>
+                                <li class="flex items-center">✅ Goma blanca</li>
+                                <li class="flex items-center font-bold text-red-600">✅ Reloj Analógico (Indispensable)</li>
+                                <li class="flex items-center">🚫 Celular APAGADO</li>
+                            </ul>
+                        </div>
+                    </section>
+                
+                    <section class="mb-12">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-6 pb-2 border-b-2 border-japan-red inline-block">
+                            Preguntas Frecuentes
+                        </h2>
+                        <div class="space-y-4">
+                            <details class="group p-4 bg-gray-50 rounded cursor-pointer">
+                                <summary class="font-bold text-gray-800">¿Si repruebo una parte pero mi total es alto, paso?</summary>
+                                <p class="text-sm mt-2 text-gray-600">No. Debes aprobar cada sección individualmente.</p>
+                            </details>
+                            <details class="group p-4 bg-gray-50 rounded cursor-pointer">
+                                <summary class="font-bold text-gray-800">¿Puedo cambiar de sede después de pagar?</summary>
+                                <p class="text-sm mt-2 text-gray-600">No. El trámite es definitivo. No hay reembolsos.</p>
+                            </details>
+                            <details class="group p-4 bg-gray-50 rounded cursor-pointer">
+                                <summary class="font-bold text-gray-800">¿Es necesario saber escribir Kanjis a mano?</summary>
+                                <p class="text-sm mt-2 text-gray-600">Para el examen no (es opción múltiple), pero ayuda a estudiar.</p>
+                            </details>
+                        </div>
+                    </section>
+                
+                    <footer class="bg-gray-800 text-white p-8 rounded-lg text-center mt-12">
+                        <h3 class="text-2xl font-bold mb-4">Conclusión</h3>
+                        <p class="mb-6 opacity-90 text-sm md:text-base">
+                            La preparación para el JLPT N5 en México es un viaje que combina disciplina académica con astucia logística. No es un examen imposible, pero es implacable con la improvisación. Con la inscripción realizada a tiempo en agosto y los materiales adecuados, tienes todas las herramientas para triunfar.
+                        </p>
+                        <p class="text-2xl md:text-3xl font-bold text-japan-red tracking-widest uppercase">
+                            ¡Ganbatte kudasai!
+                        </p>
+                    </footer>
+                
+                </article>
             </div>
-            <h3 class="text-xl font-bold text-gray-800 mb-4">Dónde Comprar en México</h3>
-            <ul class="custom-list text-gray-700">
-                <li><strong>NBK Libros (Nichiboku):</strong> Mártires Irlandeses 62, Coyoacán, CDMX. Importadores directos y la opción más segura.</li>
-                <li><strong>Kamite / Panini:</strong> A veces importan diccionarios, pero su foco es manga.</li>
-                <li><strong>Amazon México / Mercado Libre:</strong> Viable, pero verificar reputación y edición.</li>
-                <li><strong>Bibliotecas:</strong> Fundación Japón en Polanco y Asociación México Japonesa (consulta en sitio).</li>
-            </ul>
-        </section>
-        <section class="mb-16">
-            <h2 class="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-jp-red pb-2 inline-block">
-                Capítulo V: Plan Estratégico de Estudio
-            </h2>
-            <div class="space-y-6">
-                <div class="flex">
-                    <div class="flex-shrink-0 w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center font-bold text-gray-600 mr-4">1</div>
-                    <div>
-                        <h4 class="font-bold text-lg">Fase 1: Los Cimientos (Meses 1-2)</h4>
-                        <p class="text-gray-700">Dominio absoluto de Hiragana y Katakana (lectura fluida). Vocabulario núcleo: Memorizar las primeras 400 palabras (verbos de movimiento, adjetivos, familia). Usar Anki diariamente.</p>
-                    </div>
-                </div>
-                <div class="flex">
-                    <div class="flex-shrink-0 w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center font-bold text-gray-600 mr-4">2</div>
-                    <div>
-                        <h4 class="font-bold text-lg">Fase 2: Construcción Gramatical y Kanji (Meses 3-4)</h4>
-                        <p class="text-gray-700">Gramática: Enfocarse en partículas (WA vs GA, NI vs DE) y conjugaciones (Forma -TE, -NAI, -TA). Kanji: Aprender los 80-100 caracteres con lecturas On-yomi y Kun-yomi.</p>
-                    </div>
-                </div>
-                <div class="flex">
-                    <div class="flex-shrink-0 w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center font-bold text-gray-600 mr-4">3</div>
-                    <div>
-                        <h4 class="font-bold text-lg">Fase 3: Simulación de Combate (Meses 5-6)</h4>
-                        <p class="text-gray-700">Entrenar el oído para descartar información en audios de "un solo uso". Realizar simulacros (Mock Exams) cronometrados con reloj analógico y hojas de burbujas.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="mb-16">
-            <h2 class="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-jp-red pb-2 inline-block">
-                Capítulo VI: Crónica del Día del Examen (7 de Diciembre 2025)
-            </h2>
-           
-            <div class="bg-gray-100 p-6 rounded-xl mb-6">
-                <h3 class="text-xl font-bold text-gray-800 mb-4">6.1 El Kit de Supervivencia</h3>
-                <ul class="grid md:grid-cols-2 gap-2 text-gray-700">
-                    <li>✅ <strong>Test Voucher Impreso:</strong> Sin él, no hay acceso.</li>
-                    <li>✅ <strong>Identificación Oficial:</strong> INE o Pasaporte original.</li>
-                    <li>✅ <strong>Lápices:</strong> Madera HB o No. 2 (evita portaminas).</li>
-                    <li>✅ <strong>Goma:</strong> Blanca de buena calidad.</li>
-                    <li>✅ <strong>Reloj Analógico:</strong> <span class="text-red-600 font-bold">REGLA DE ORO.</span> Smartwatches prohibidos. Aulas a menudo sin reloj.</li>
-                    <li>✅ <strong>Ropa en capas:</strong> Prepárate para frío (AC) o calor.</li>
-                </ul>
-            </div>
-            <h3 class="text-xl font-bold text-gray-800 mb-4">6.2 Reglas de Fuego y Estrategia</h3>
-            <ul class="custom-list text-gray-700">
-                <li><strong>Cero Electrónica:</strong> Celulares apagados. Si suena/vibra, es expulsión inmediata.</li>
-                <li><strong>Sin Salidas:</strong> No hay baño durante las secciones.</li>
-                <li><strong>Vocabulario:</strong> Velocidad. Si no sabes un Kanji, adivina y sigue.</li>
-                <li><strong>Lectura:</strong> Lee primero las preguntas, luego busca la respuesta. No leas todo el texto de golpe.</li>
-                <li><strong>Audio:</strong> Si pierdes una pregunta, olvídala instantáneamente. No rompas la cadena de concentración.</li>
-            </ul>
-        </section>
-        <section class="mb-16">
-            <h2 class="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-jp-red pb-2 inline-block">
-                Capítulo VII: Preguntas Frecuentes (FAQ)
-            </h2>
-            <div class="space-y-4">
-                <details class="group bg-gray-50 rounded-lg p-4 cursor-pointer">
-                    <summary class="font-bold text-gray-800 group-open:text-jp-red">¿Si no apruebo una sección pero mi total es alto, paso?</summary>
-                    <p class="mt-2 text-gray-600 text-sm">No. Es obligatorio superar el umbral mínimo en cada sección (19/60 en escucha, 38/120 en lenguaje/lectura). El equilibrio es no negociable.</p>
-                </details>
-                <details class="group bg-gray-50 rounded-lg p-4 cursor-pointer">
-                    <summary class="font-bold text-gray-800 group-open:text-jp-red">¿Puedo cambiar de sede o nivel después de pagar?</summary>
-                    <p class="mt-2 text-gray-600 text-sm">No. El sistema es rígido. Una vez pagado e inscrito, no hay cambios ni devoluciones.</p>
-                </details>
-                <details class="group bg-gray-50 rounded-lg p-4 cursor-pointer">
-                    <summary class="font-bold text-gray-800 group-open:text-jp-red">¿El certificado JLPT caduca?</summary>
-                    <p class="mt-2 text-gray-600 text-sm">Oficialmente no, es vitalicio. Sin embargo, muchas empresas prefieren certificados con menos de 2 años de antigüedad.</p>
-                </details>
-                <details class="group bg-gray-50 rounded-lg p-4 cursor-pointer">
-                    <summary class="font-bold text-gray-800 group-open:text-jp-red">¿Es necesario saber escribir los Kanjis a mano?</summary>
-                    <p class="mt-2 text-gray-600 text-sm">Para el examen no (es selección múltiple). Pero aprender a escribirlos ayuda enormemente a la memorización.</p>
-                </details>
-            </div>
-        </section>
-        <footer class="mt-16 bg-jp-dark text-white p-8 rounded-xl text-center">
-            <h2 class="text-2xl font-bold mb-4">Conclusión</h2>
-            <p class="mb-6 text-gray-300">
-                La preparación para el JLPT N5 en México es un viaje que combina disciplina académica con astucia logística. No es un examen imposible, pero es implacable con la improvisación. Con la inscripción realizada a tiempo en agosto, los materiales adecuados y una estrategia sólida, tienes todas las herramientas para triunfar.
-            </p>
-            <p class="text-3xl font-bold text-jp-red tracking-widest uppercase">¡Ganbatte kudasai!</p>
-        </footer>
-    </article>
-            </div>
+            
         </div>
     </div>
+
     <script>
         // --- NAVEGACIÓN ---
         function showSection(sectionId) {
@@ -1115,17 +1104,19 @@
             sections.forEach(s => { s.classList.remove('active-section'); s.style.display = 'none'; });
             const buttons = document.querySelectorAll('.nav-btn');
             buttons.forEach(b => b.classList.remove('active'));
-           
+            
             const target = document.getElementById(sectionId);
             setTimeout(() => { target.style.display = 'block'; void target.offsetWidth; target.classList.add('active-section'); }, 50);
             const map = {'home':0, 'about':1, 'faq':2, 'japanese':3, 'french':4, 'contact':5, 'test':6, 'blog':7};
             if(buttons[map[sectionId]]) buttons[map[sectionId]].classList.add('active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
+
         // --- FAQ LOGIC ---
         function toggleFaq(element) {
             element.classList.toggle('active');
         }
+
         // --- BANCO DE PREGUNTAS EXTENSO (30+) ---
         const questionBank = [
             // Saludos y Básicos
@@ -1155,22 +1146,24 @@
             { q: "21. Significado de 山 (Yama)", options: ["Río", "Montaña", "Fuego", "Árbol"], correct: 1 },
             { q: "22. Significado de 川 (Kawa)", options: ["Río", "Montaña", "Piedra", "Cielo"], correct: 0 },
             { q: "23. Significado de 人 (Hito)", options: ["Persona", "Grande", "Pequeño", "Entrar"], correct: 0 },
-           
+            
             // Cultura y Frases
             { q: "24. Antes de comer se dice...", options: ["Itadakimasu (いただきます)", "Gochisousama (ごちそうさま)", "Tadaima (ただいま)", "Okaeri (おかえり)"], correct: 0 },
             { q: "25. Al salir de casa se dice...", options: ["Ittekimasu (行ってきます)", "Itterasshai (行ってらっしゃい)", "Tadaima (ただいま)", "Okaeri (おかえり)"], correct: 0 },
             { q: "26. 'Kawaii' significa...", options: ["Miedo", "Bonito/Tierno", "Feo", "Rápido"], correct: 1 },
             { q: "27. Capital de Japón", options: ["Kyoto", "Osaka", "Tokyo", "Hiroshima"], correct: 2 },
             { q: "28. Moneda de Japón", options: ["Won", "Yuan", "Yen (円)", "Dólar"], correct: 2 },
-           
+            
             // N4 Intro
             { q: "29. Forma Te: 'Kaku' (Escribir) se convierte en...", options: ["Kaite (書いて)", "Kakite", "Kaita", "Kakande"], correct: 0 },
             { q: "30. 'Tabetai' significa...", options: ["Comí", "No como", "Quiero comer", "Comamos"], correct: 2 }
         ];
+
         let currentQuestions = [];
         let currentIndex = 0;
         let score = 0;
         let selectedOption = null;
+
         function shuffleArray(array) {
             for (let i = array.length - 1; i > 0; i--) {
                 const j = Math.floor(Math.random() * (i + 1));
@@ -1178,24 +1171,28 @@
             }
             return array;
         }
+
         function restartQuiz() {
             // Seleccionar 10 preguntas aleatorias nuevas
             const shuffled = shuffleArray([...questionBank]);
             currentQuestions = shuffled.slice(0, 10);
-           
+            
             currentIndex = 0;
             score = 0;
             document.getElementById('result-screen').style.display = 'none';
             document.getElementById('quiz-screen').style.display = 'block';
             loadQuestion();
         }
+
         function loadQuestion() {
             const qData = currentQuestions[currentIndex];
             document.getElementById('question-text').innerText = qData.q;
             document.getElementById('q-counter').innerText = `Pregunta ${currentIndex + 1} de 10`;
             document.getElementById('progress').style.width = `${((currentIndex) / 10) * 100}%`;
+            
             const container = document.getElementById('options-container');
             container.innerHTML = '';
+            
             qData.options.forEach((opt, index) => {
                 const btn = document.createElement('button');
                 btn.className = 'option-btn';
@@ -1205,15 +1202,18 @@
             });
             document.getElementById('next-btn').style.display = 'none';
         }
+
         function selectOption(index, btnElement) {
             selectedOption = index;
             document.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
             btnElement.classList.add('selected');
             document.getElementById('next-btn').style.display = 'inline-block';
         }
+
         function nextQuestion() {
             const isCorrect = selectedOption === currentQuestions[currentIndex].correct;
             if (isCorrect) score++;
+
             // Mostrar feedback
             const buttons = document.querySelectorAll('.option-btn');
             buttons.forEach((btn, idx) => {
@@ -1224,6 +1224,7 @@
                 }
                 btn.disabled = true;
             });
+
             setTimeout(() => {
                 currentIndex++;
                 selectedOption = null;
@@ -1234,10 +1235,12 @@
                 }
             }, 1000); // Espera 1 segundo para mostrar feedback
         }
+
         function showResult() {
             document.getElementById('quiz-screen').style.display = 'none';
             document.getElementById('result-screen').style.display = 'block';
             document.getElementById('final-score').innerText = `${score}/10`;
+            
             let title, desc, waMsg;
             if (score <= 4) {
                 title = "Nivel Principiante (Inicio)";
@@ -1252,27 +1255,33 @@
                 desc = "¡Excelente nivel! Estás listo para retos mayores como el N4 o N3.";
                 waMsg = `Hice el test en la web y saqué ${score}/10. Tengo nivel intermedio.`;
             }
+
             document.getElementById('level-title').innerText = title;
             document.getElementById('level-desc').innerText = desc;
             document.getElementById('wa-result-link').href = `https://wa.me/522471058977?text=${encodeURIComponent(waMsg)}`;
         }
+
         // Iniciar Test al cargar
         restartQuiz();
+
         // Form Submission (simulada, usa email.js o similar en producción)
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             alert('Mensaje enviado exitosamente!');
             this.reset();
         });
+
         // Article Modal
         function openArticleModal(articleId) {
             document.getElementById('articleModal').style.display = 'block';
             document.getElementById(articleId).style.display = 'block';
         }
+
         function closeArticleModal() {
             document.getElementById('articleModal').style.display = 'none';
             document.querySelectorAll('#articleModal > .modal-content > div').forEach(div => div.style.display = 'none');
         }
+
     </script>
 </body>
 </html>
