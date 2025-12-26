@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Centro de idiomas Yorokobi: clases online de japonés y francés desde Huamantla, México. Aprende con profesores certificados y metodología interactiva.">
+    <meta name="keywords" content="clases japonés, francés online, certificación JLPT, DELF, idiomas Huamantla, aprendizaje idiomas, cursos zoom">
     <title>Yorokobi | Centro de Idiomas</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
-    
+   
     <style>
         :root {
             --primary: #FF4E50; /* Rojo vibrante */
@@ -19,14 +21,12 @@
             --glass: rgba(255, 255, 255, 0.95);
             --shadow: 0 8px 30px rgba(0,0,0,0.12);
         }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
         }
-
         body {
             background: var(--bg-gradient);
             color: var(--secondary);
@@ -34,7 +34,6 @@
             line-height: 1.6;
             min-height: 100vh;
         }
-
         /* --- NAVEGACIÓN --- */
         nav {
             background: var(--glass);
@@ -48,7 +47,6 @@
             top: 0;
             z-index: 1000;
         }
-
         .logo {
             font-size: 1.5rem;
             font-weight: 800;
@@ -59,15 +57,12 @@
             align-items: center;
             gap: 10px;
         }
-
         .logo span { color: var(--secondary); }
-
         .nav-links {
             display: flex;
             gap: 10px;
             flex-wrap: wrap;
         }
-
         .nav-btn {
             background: transparent;
             border: none;
@@ -79,14 +74,12 @@
             border-radius: 50px;
             color: #555;
         }
-
         .nav-btn:hover, .nav-btn.active {
             background-color: var(--primary);
             color: var(--white);
             transform: translateY(-2px);
             box-shadow: 0 4px 15px rgba(255, 78, 80, 0.4);
         }
-
         .nav-btn.test-btn {
             border: 2px solid var(--primary);
             color: var(--primary);
@@ -95,7 +88,6 @@
             background: var(--primary);
             color: white;
         }
-
         /* --- CONTENEDOR PRINCIPAL --- */
         main {
             min-height: 85vh;
@@ -103,24 +95,20 @@
             max-width: 1400px;
             margin: 0 auto;
         }
-
         section {
             display: none;
             opacity: 0;
             transition: opacity 0.4s ease-in;
         }
-
         section.active-section {
             display: block;
             opacity: 1;
             animation: slideUp 0.6s ease-out;
         }
-
         @keyframes slideUp {
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
-
         /* --- HERO RENOVADO --- */
         .hero-banner {
             background: linear-gradient(120deg, #ffffff 0%, #fff0f0 100%);
@@ -133,7 +121,7 @@
             overflow: hidden;
             border: 1px solid rgba(255,255,255,0.5);
         }
-        
+       
         .hero-banner::before, .hero-banner::after {
             content: ''; position: absolute; border-radius: 50%; z-index: 0;
         }
@@ -143,9 +131,7 @@
         .hero-banner::after {
             bottom: -50px; right: -50px; width: 200px; height: 200px; background: var(--accent); opacity: 0.1;
         }
-
         .hero-content { position: relative; z-index: 1; }
-
         .amij-badge {
             background: var(--secondary);
             color: var(--white);
@@ -159,17 +145,14 @@
             gap: 8px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
-
         .hero-banner h1 {
             font-size: 3rem; margin-bottom: 0.5rem; color: var(--secondary);
             font-family: 'Noto Sans JP', sans-serif; line-height: 1.2;
         }
-
         .hero-banner h2 {
             font-size: 1.2rem; color: var(--primary); font-weight: 600;
             letter-spacing: 2px; margin-bottom: 2.5rem; text-transform: uppercase;
         }
-
         .whatsapp-main-btn {
             background: #25D366; color: white; padding: 15px 40px; border-radius: 50px;
             font-weight: bold; font-size: 1.1rem; display: inline-flex; align-items: center;
@@ -177,19 +160,16 @@
             transition: all 0.3s; border: 4px solid white;
         }
         .whatsapp-main-btn:hover { transform: translateY(-5px) scale(1.05); }
-
         /* --- CARDS & GRID --- */
         .info-grid {
             display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
             margin-bottom: 5rem; align-items: center;
         }
         .info-text h3 { font-size: 2.2rem; margin-bottom: 1.5rem; color: var(--primary); }
-
         .values-grid {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem; margin-top: 2rem;
         }
-
         .value-card {
             background: var(--white); padding: 3rem 2rem; border-radius: 20px;
             box-shadow: var(--shadow); transition: transform 0.3s; position: relative;
@@ -199,7 +179,6 @@
         .value-card.mis { border-top: 5px solid var(--primary); }
         .value-card.vis { border-top: 5px solid var(--accent); }
         .value-card:hover { transform: translateY(-10px); }
-
         /* --- TESTIMONIOS (NUEVO) --- */
         .testimonials-section { margin-top: 4rem; text-align: center; }
         .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem; }
@@ -213,7 +192,6 @@
         }
         .stars { color: #FFD700; margin-bottom: 10px; }
         .student-name { font-weight: bold; color: var(--secondary); margin-top: 15px; display: block; }
-
         /* --- METODOLOGIA (NUEVO) --- */
         .methodology-box {
             background: var(--secondary); color: white; border-radius: 30px;
@@ -225,11 +203,14 @@
             border-radius: 50%; display: flex; align-items: center; justify-content: center;
             font-size: 2.5rem; flex-shrink: 0; color: var(--accent);
         }
-
         /* --- FAQ (NUEVO) --- */
         .faq-item {
             background: white; margin-bottom: 10px; border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05); overflow: hidden;
+            transition: transform 0.3s;
+        }
+        .faq-item:hover {
+            transform: translateY(-5px);
         }
         .faq-question {
             padding: 1.5rem; cursor: pointer; display: flex; justify-content: space-between;
@@ -241,7 +222,6 @@
         }
         .faq-item.active .faq-answer { padding-bottom: 1.5rem; max-height: 200px; }
         .faq-item.active .faq-question { color: var(--primary); }
-
         /* --- TEST DE NIVEL --- */
         .quiz-container {
             max-width: 800px; margin: 0 auto; background: var(--white); padding: 3rem;
@@ -258,6 +238,8 @@
         }
         .option-btn:hover { border-color: var(--primary); background: #fff0f0; }
         .option-btn.selected { background: var(--secondary); color: white; border-color: var(--secondary); }
+        .option-btn.correct { background: #28a745; color: white; }
+        .option-btn.incorrect { background: #dc3545; color: white; }
         .next-btn {
             background: var(--primary); color: white; border: none; padding: 12px 30px;
             border-radius: 50px; font-weight: bold; font-size: 1.1rem; cursor: pointer; display: none;
@@ -268,7 +250,6 @@
             border-radius: 50%; display: flex; align-items: center; justify-content: center;
             font-size: 3rem; font-weight: bold; margin: 0 auto 2rem;
         }
-
         /* --- IDIOMAS --- */
         .pricing-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
         .price-card {
@@ -289,7 +270,6 @@
             text-decoration: none; border-radius: 12px; font-weight: 600; transition: 0.3s;
         }
         .cta-card-btn:hover { background: var(--primary); transform: scale(1.02); }
-
         /* --- CONTACTO Y MAPA --- */
         .contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 2rem; }
         .map-wrapper {
@@ -303,7 +283,6 @@
             color: var(--secondary); margin-bottom: 1rem;
         }
         .contact-item:hover { transform: translateX(10px); background: #fffcfc; }
-
         .floating-wa {
             position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px;
             background: #25D366; color: white; border-radius: 50%; display: flex;
@@ -312,9 +291,87 @@
             transition: transform 0.3s; text-decoration: none;
         }
         .floating-wa:hover { transform: scale(1.1) rotate(10deg); }
-
         footer { background: var(--secondary); color: white; text-align: center; padding: 3rem; margin-top: 5rem; }
-
+        /* --- Pop-up Modal --- */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 3000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        /* --- Blog Section --- */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .blog-card {
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            padding: 1.5rem;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+        /* --- Formulario de Contacto --- */
+        .contact-form {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            margin-top: 2rem;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .contact-form button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .teacher-img {
+            max-width: 200px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+        }
         @media (max-width: 768px) {
             .nav-links { gap: 5px; justify-content: center; margin-top: 15px; }
             nav { flex-direction: column; }
@@ -323,26 +380,30 @@
             .options-grid { grid-template-columns: 1fr; }
             .methodology-box { flex-direction: column; text-align: center; }
         }
+        @media (max-width: 480px) {
+            .hero-banner { padding: 2rem 1rem; }
+            .hero-banner h1 { font-size: 1.8rem; }
+            .nav-links { flex-direction: column; gap: 10px; }
+        }
     </style>
 </head>
 <body>
-
     <!-- NAVEGACIÓN -->
     <nav>
         <div class="logo" onclick="showSection('home')">
             <i class="fas fa-sun" style="margin-right: 8px;"></i> YOROKOBI <span>喜び</span>
         </div>
         <div class="nav-links">
-            <button class="nav-btn active" onclick="showSection('home')">Inicio</button>
-            <button class="nav-btn" onclick="showSection('about')">Nosotros</button>
-            <button class="nav-btn" onclick="showSection('faq')">Preguntas</button> <!-- Nueva Pestaña -->
-            <button class="nav-btn" onclick="showSection('japanese')">Japonés</button>
-            <button class="nav-btn" onclick="showSection('french')">Francés</button>
-            <button class="nav-btn" onclick="showSection('contact')">Contacto</button>
-            <button class="nav-btn test-btn" onclick="showSection('test')"><i class="fas fa-pencil-alt"></i> Test Nivel</button>
+            <button class="nav-btn active" onclick="showSection('home')" aria-label="Ir a Inicio">Inicio</button>
+            <button class="nav-btn" onclick="showSection('about')" aria-label="Ir a Nosotros">Nosotros</button>
+            <button class="nav-btn" onclick="showSection('faq')" aria-label="Ir a Preguntas">Preguntas</button>
+            <button class="nav-btn" onclick="showSection('japanese')" aria-label="Ir a Japonés">Japonés</button>
+            <button class="nav-btn" onclick="showSection('french')" aria-label="Ir a Francés">Francés</button>
+            <button class="nav-btn" onclick="showSection('contact')" aria-label="Ir a Contacto">Contacto</button>
+            <button class="nav-btn test-btn" onclick="showSection('test')" aria-label="Ir a Test de Nivel"><i class="fas fa-pencil-alt"></i> Test Nivel</button>
+            <button class="nav-btn" onclick="showSection('blog')" aria-label="Ir a Blog">Blog</button>
         </div>
     </nav>
-
     <main>
         <!-- SECCIÓN: INICIO -->
         <section id="home" class="active-section">
@@ -353,18 +414,17 @@
                     </div>
                     <h1>CENTRO DE IDIOMAS YOROKOBI</h1>
                     <h2>Aprende Japonés y Francés desde casa</h2>
-                    
+                   
                     <a href="https://wa.me/522471058977" class="whatsapp-main-btn" target="_blank">
                         <i class="fab fa-whatsapp"></i> Inscríbete por WhatsApp
                     </a>
                 </div>
             </div>
-
             <div class="info-grid">
                 <div class="info-text">
                     <h3>El futuro es Online</h3>
                     <p style="font-size: 1.1rem;">
-                        En Yorokobi rompemos fronteras. Desde Huamantla para el mundo, ofrecemos clases interactivas en vivo vía Zoom. 
+                        En Yorokobi rompemos fronteras. Desde Huamantla para el mundo, ofrecemos clases interactivas en vivo vía Zoom.
                         Nuestra metodología está diseñada para que sientas la cercanía de un salón de clases desde la comodidad de tu hogar.
                     </p>
                 </div>
@@ -372,7 +432,6 @@
                      <i class="fas fa-laptop-house" style="font-size: 10rem; color: var(--secondary); opacity: 0.1;"></i>
                 </div>
             </div>
-
             <!-- METODOLOGÍA (NUEVO) -->
             <div class="methodology-box">
                 <div class="method-icon"><i class="fas fa-brain"></i></div>
@@ -381,7 +440,6 @@
                     <p>Utilizamos un enfoque comunicativo donde la gramática sirve a la conversación. No memorizas listas, aprendes a usar el idioma en situaciones reales desde la primera semana. Usamos materiales digitales exclusivos y pizarras interactivas.</p>
                 </div>
             </div>
-
             <!-- TESTIMONIOS (NUEVO) -->
             <div class="testimonials-section">
                 <h2 style="color:var(--secondary); margin-bottom: 2rem;">Lo que dicen nuestros alumnos</h2>
@@ -404,7 +462,6 @@
                 </div>
             </div>
         </section>
-
         <!-- SECCIÓN: TEST DE NIVEL (NUEVA LÓGICA ALEATORIA) -->
         <section id="test">
             <div class="quiz-container">
@@ -413,20 +470,17 @@
                         <h2><i class="fas fa-puzzle-piece"></i> Test de Nivel Japonés</h2>
                         <p>10 preguntas aleatorias para medir tu conocimiento actual.</p>
                     </div>
-                    
+                   
                     <div class="progress-bar"><div class="progress-fill" id="progress"></div></div>
-
                     <div class="question-box">
                         <div class="question-text" id="question-text">Cargando pregunta...</div>
                         <div class="options-grid" id="options-container"></div>
                     </div>
-
                     <div class="quiz-footer">
                         <span id="q-counter">Pregunta 1 de 10</span>
                         <button class="next-btn" id="next-btn" onclick="nextQuestion()">Siguiente <i class="fas fa-arrow-right"></i></button>
                     </div>
                 </div>
-
                 <div id="result-screen" class="result-box">
                     <h2>¡Test Completado!</h2>
                     <p style="margin-bottom: 2rem;">Tu resultado preliminar es:</p>
@@ -441,14 +495,13 @@
                 </div>
             </div>
         </section>
-
         <!-- SECCIÓN: FAQ (NUEVA) -->
         <section id="faq">
             <div class="hero-banner" style="padding: 3rem; margin-bottom: 3rem;">
                 <h1>Preguntas Frecuentes</h1>
                 <p>Resolvemos tus dudas antes de inscribirte</p>
             </div>
-            
+           
             <div style="max-width: 800px; margin: 0 auto;">
                 <div class="faq-item" onclick="toggleFaq(this)">
                     <div class="faq-question">¿Las clases son en vivo o grabadas? <i class="fas fa-chevron-down"></i></div>
@@ -468,38 +521,77 @@
                 </div>
             </div>
         </section>
-
         <!-- SECCIÓN: NOSOTROS -->
         <section id="about">
-             <div class="hero-banner" style="padding: 3rem; margin-bottom: 3rem;">
+            <div class="hero-banner" style="padding: 3rem; margin-bottom: 3rem;">
                 <h1>Nuestra Historia</h1>
                 <p style="color: #666;">Pasión por la enseñanza desde 2018</p>
             </div>
             <div style="max-width: 800px; margin: 0 auto;">
                 <div class="contact-item" style="border-left: 5px solid var(--primary);">
-                    <div><h4 style="color:var(--primary)">2018: Inicios</h4><p>Iniciamos en Huamantla con solo 3 alumnos.</p></div>
+                    <div><h4 style="color:var(--primary)">2018: Inicios</h4><p>La enseñanza del idioma japonés en Huamantla inició en una escuela de idiomas privada, en esos días solo existían 3 alumnos estudiando el idioma, lamentablemente la economía para ellos no era buena y tuvieron que dejarlo, sin embargo se iniciaron las clases en casa del maestro y lograr que los chicos asistieron a su examen de certificación.</p></div>
                 </div>
-                 <div class="contact-item" style="border-left: 5px solid var(--secondary);">
-                    <div><h4 style="color:var(--secondary)">2019: Nace Yorokobi</h4><p>Primera enseñanza formal de japonés en Huamantla.</p></div>
+                <div class="contact-item" style="border-left: 5px solid var(--secondary);">
+                    <div><h4 style="color:var(--secondary)">2019: Nació Yorokobi</h4><p>Después de lograr que los chicos fueran a su primer examen, se inició el proyecto de dar clases a bajo costo ya que mucha gente de la región no cuenta con el capital necesario para poder estudiar cosas nuevas, se inició con la gestión de un lugar público en el Barrio de Santa Maria Yancuitlalpan en ciudad de Huamantla y se logró tener un espacio con poco mobiliario, así es como el 5 y 6 enero del año 2019 se iniciaron las clases de manera presencial y por primera vez en la ciudad de Huamantla Tlaxcala se daba la enseñanza del idioma japonés.</p></div>
                 </div>
                 <div class="contact-item" style="border-left: 5px solid var(--accent);">
-                    <div><h4 style="color:var(--accent)">2020: Miembro AMIJ</h4><p>Nos unimos a la Asociación Mexicana del Idioma Japonés y migramos a Online.</p></div>
+                    <div><h4 style="color:var(--accent)">2019: Conociendo a la AMIJ</h4><p>Para agosto del año 2019 la maestra Saeko Takekawa nos invitó a la ciudad de Puebla a una reunión con personas que enseñan el idioma japonés en la zona centro de México, así es como inició la nueva aventura de conocer el idioma a nivel nacional.</p></div>
                 </div>
                 <div class="contact-item" style="border-left: 5px solid var(--primary);">
-                    <div><h4 style="color:var(--primary)">Actualidad</h4><p>Alumnos de México, Ecuador, Perú, Chile, Bolivia, Guatemala, España y Japón.</p></div>
+                    <div><h4 style="color:var(--primary)">2020: Miembro AMIJ</h4><p>Marzo del año 2020 realizamos la inscripción como miembro de la Asociación Mexicana del Idioma Japonés donde participamos en el 25 Simposio de la enseñanza del Idioma Japonés en México.</p></div>
+                </div>
+                <div class="contact-item" style="border-left: 5px solid var(--secondary);">
+                    <div><h4 style="color:var(--secondary)">2020: Clases online</h4><p>Una semana después del simposio iniciamos el confinamiento por el COVID-19, desafortunadamente esta situación hizo que saliéramos del edificio que nos prestaban sin embargo en abril iniciamos las clases en línea y en mayo iniciaron nuevos grupos donde poco a poco hemos crecido y tenemos el gusto de tener a chicos y chicas de todo México, Chile y Perú.</p></div>
+                </div>
+                <div class="contact-item" style="border-left: 5px solid var(--accent);">
+                    <div><h4 style="color:var(--accent)">2023: Actualmente</h4><p>El Centro de Idiomas Yorokobi ha logrado estar en la lista oficial de las escuelas donde se imparte el idioma japonés en la página donde se registran los alumnos para hacer su examen de certificación. Actualmente en Yorokobi hay alumnos de diferentes partes de México, Ecuador, Perú, Chile, Bolivia, Guatemala, España y Japón. Además, el profesor y director del centro se ha mantenido activo en cursos que ha brindado Fundación Japón en México para la mejor enseñanza del idioma.</p></div>
                 </div>
             </div>
+            <div style="text-align: center; margin-top: 3rem; font-style: italic; color: var(--primary); font-size: 1.2rem;">
+                Centro de Idiomas Yorokobi desde 2018 🌟 Donde el aprendizaje se convierte en alegría y nace una sonrisa 🌟
+            </div>
         </section>
-
         <!-- SECCIÓN: JAPONÉS -->
         <section id="japanese">
+            <div class="hero-banner" style="padding: 3rem; margin-bottom: 3rem;">
+                <h1>Idioma Japonés</h1>
+                <p style="color: #666;">Descubre el fascinante mundo del japonés con nosotros</p>
+            </div>
+            <div style="max-width: 800px; margin: 0 auto 3rem;">
+                <h3>C. Guillermo Ordaz</h3>
+                <p>Responsable del idioma Japonés</p>
+                <img src="https://lh3.googleusercontent.com/sitesv/AAzXCkdrMrOz9gXyqwmhya-CYVs8j80iQ05om7HimTfm01L4Z2mySXw16YgbJndlWD9Yvg840eQNOkI6A26_cXyNUB0xW4IrVRUfIkOHbdLm6VrkwtFV9AdCvGLXOee2RgUovuPuWrP239433VxLHhbXexLdsZxMudLUI0EOoyhzc3ArRzsAWmaGkc3WJManALR3JVULCKxn3cLNlkXVuhhiKqXHKOdSkapplpcW=w1280" alt="Foto del maestro de japonés Guillermo Ordaz" class="teacher-img" loading="lazy">
+                <h4>FORMACIÓN</h4>
+                <ul>
+                    <li>🎍 Técnico en sistemas computacionales. (Mantenimiento y actualización de computadoras)</li>
+                    <li>🎍 Docente de nivel primaria en el área de informática. (Atendí a alumnos de 1o a 6o grado durante 8 años)</li>
+                    <li>🎍 Administrativo de nivel primaria. (Actualmente si apoyando a directores en el área administrativa)</li>
+                    <li>🎍 2011 Me certifiqué en el nivel N4 del idioma japonés, en 2018 vuelvo a hacer exámenes de certificación del para estar actualizado nuevamente con el idioma japonés</li>
+                    <li>🎍 2020 a la fecha me integré a la Asociación Mexicana del Idioma Japonés A.C. e inicio cursos y talleres que brinda Fundación Japón para actualizar mi método de enseñanza aprendizaje del idioma japonés.</li>
+                </ul>
+                <h4>NIVELES QUE SE IMPARTEN</h4>
+                <h5>Básico</h5>
+                <p>En este curso iniciamos desde cero y lo que vemos es hiragana, katakana y principalmente nos enfocamos en la adquisición de la lecto-escritura. Así mismo los chicos adquieren conocimiento de vocabulario de diversos temas y usan gramática sencilla para darle uso al vocabulario aprendido. Este nivel tiene un equivalente al NIVEL A1.1 del Marco Común Europeo de Referencia para las lenguas.</p>
+                <h5>N5</h5>
+                <p>Es el primer nivel de certificación del idioma japonés. Los alumnos se prepararán para realizar el examen Nihongo nōryoku shiken, cuya abreviación es JLPT por sus siglas en inglés, es un examen de fluidez y conocimientos del idioma japonés. Aquí vemos gramática en 25 lecciones de la 1 a 25 usando el libro de Minna no Nihongo y se estudian los primeros 80 - 100 kanjis para este nivel.</p>
+                <h5>N4</h5>
+                <p>Es el segundo nivel de certificación del idioma japonés. Los alumnos se prepararán para realizar el examen Nihongo nōryoku shiken, cuya abreviación es JLPT por sus siglas en inglés, es un examen de fluidez y conocimientos del idioma japonés. Aquí vemos gramática en 25 lecciones de la 26 a 50 usando el libro de Minna no Nihongo y se estudian 160 - 200 kanjis para este nivel.</p>
+            </div>
             <div class="pricing-container">
                 <div class="price-card">
                     <div class="price-header japanese"><h3>Curso Básico</h3><p>Inicia tu camino</p></div>
                     <div class="price-body">
                         <div class="price-tag">$420 <small>MXN</small></div>
                         <p style="text-align:center; color:#888;">$450 MXN Extranjeros</p>
-                        <ul class="benefits-list"><li><i class="far fa-clock"></i> 3 horas semanales</li><li><i class="fas fa-book"></i> Material digital</li></ul>
+                        <ul class="benefits-list">
+                            <li>🌻 El curso básico</li>
+                            <li>🍒 Consta de 3 HORAS a la semana dividido en dos días DE 1.5 HORAS o tomar una clase de 3 Horas.</li>
+                            <li>🥝 Tenemos horarios todos los días en la mañana, tarde y noche.</li>
+                            <li>🍉 El material que se utiliza se los brindamos digitalmente.</li>
+                            <li>🍊 Todas las clases se graban para comodidad de los chicos en caso de que no se presenten a su clase.</li>
+                            <li>🍐 Costo mensual de 420 pesos mexicanos en caso de ser de México, si es de otro país su pago es de 450 pesos mensuales.</li>
+                            <li>🫐 Las clases son por zoom.</li>
+                        </ul>
                         <a href="https://wa.me/522471058977" class="cta-card-btn">Inscribirme</a>
                     </div>
                 </div>
@@ -508,7 +600,15 @@
                     <div class="price-body">
                         <div class="price-tag">$500 <small>MXN</small></div>
                         <p style="text-align:center; color:#888;">$530 MXN Extranjeros</p>
-                        <ul class="benefits-list"><li><i class="far fa-clock"></i> 5 horas semanales</li><li><i class="fas fa-check-circle"></i> Hiragana, Kanji</li></ul>
+                        <ul class="benefits-list">
+                            <li>🌺 Curso N5</li>
+                            <li>🐉 Consta de 5 HORAS a la semana dividido en dos días DE 2.5 HORAS.</li>
+                            <li>🦥 Tenemos horarios en la mañana, tarde y noche todos los dias de la semana.</li>
+                            <li>🐘 El material que se utiliza se los brindamos digitalmente.</li>
+                            <li>🐬 Todas las clases se graban para comodidad de los chicos en caso de que no se presenten a su clase.</li>
+                            <li>🦜 Costo mensual de 500.00 pesos mexicanos en caso de ser de México, si es de otro país su pago es de 530.00 pesos mensuales.</li>
+                            <li>🐡 Las clases son por zoom.</li>
+                        </ul>
                         <a href="https://wa.me/522471058977" class="cta-card-btn">Inscribirme</a>
                     </div>
                 </div>
@@ -517,28 +617,65 @@
                     <div class="price-body">
                         <div class="price-tag">$500 <small>MXN</small></div>
                         <p style="text-align:center; color:#888;">$530 MXN Extranjeros</p>
-                        <ul class="benefits-list"><li><i class="far fa-clock"></i> Viernes y Sábados</li><li><i class="fas fa-comments"></i> Conversación</li></ul>
+                        <ul class="benefits-list">
+                            <li>🏵️ Curso N4</li>
+                            <li>💐 Consta de 5 HORAS a la semana dividido en dos días DE 2.5 HORAS.</li>
+                            <li>🌹 UNICO HORARIO VIERNES DE 7 A 9:30 PM Y SÁBADO DE 8 A 10:30 AM.</li>
+                            <li>🌼 El material que se utiliza se los brindamos digitalmente.</li>
+                            <li>🌷 Todas las clases se graban para comodidad de los chicos en caso de que no se presenten a su clase.</li>
+                            <li>☘️ Costo mensual de 500.00 pesos mexicanos en caso de ser de México, si es de otro país su pago es de 530.00 pesos mensuales.</li>
+                            <li>🍁 Las clases son por zoom.</li>
+                        </ul>
                         <a href="https://wa.me/522471058977" class="cta-card-btn">Inscribirme</a>
                     </div>
                 </div>
             </div>
+            <div style="text-align: center; margin-top: 3rem; font-style: italic; color: var(--primary); font-size: 1.2rem;">
+                Centro de Idiomas Yorokobi desde 2018 🌟 Donde el aprendizaje se convierte en alegría y nace una sonrisa 🌟
+            </div>
         </section>
-
         <!-- SECCIÓN: FRANCÉS -->
         <section id="french">
+            <div class="hero-banner" style="padding: 3rem; margin-bottom: 3rem;">
+                <h1>Idioma Francés</h1>
+                <p style="color: #666;">Explora el encanto del francés con nuestra experta</p>
+            </div>
+            <div style="max-width: 800px; margin: 0 auto 3rem;">
+                <h3>C. Daniela Paz</h3>
+                <p>Responsable del idioma Francés</p>
+                <img src="https://lh3.googleusercontent.com/sitesv/AAzXCkesdi2V61qIeV9l2X_s2P1WJ9F66xeofzR05NEzt_U-yuu9XcnYMr46WaiUv5OOaYkmodnniTAz9bp_EUcPfzHn0c7y6UNNy_cpIZQjvffDed-qhqbdODqaip-auzS87teesnEfBSa8kHi5P9uHLughyZaYTIKO4E_NKslKqbYytWRqw7ESKtf38EqT64Khvu0hhylPnpvUhO15Ocqome9n_4u2JmlwPMJzOJ0=w1280" alt="Foto de la maestra de francés Daniela Paz" class="teacher-img" loading="lazy">
+                <h4>FORMACIÓN</h4>
+                <ul>
+                    <li>🌸 Maestra en educación por el ITESM.</li>
+                    <li>🌸 Docente certificada de francés con 14 años de experiencia en México y el extranjero.</li>
+                    <li>🌸 Experiencia de preescolar a empresarios.</li>
+                    <li>🌸 Traductor francés-español.</li>
+                </ul>
+                <h4>NIVELES QUE SE IMPARTEN</h4>
+                <p>Puede ser tu primer contacto con el idioma, o quizá, puedes entender frases e instrucciones básicas. Puedes interactuar en una forma muy simple y usar frases incompletas, sin una buena estructura gramatical.</p>
+                <p>Dominas frases sencillas y sabe escribirlas. Además, entiendes expresiones relacionadas con temas específicos y que te son familiares.</p>
+                <p>Captas el significado general de lo que te dicen, sin embargo sueles tener dificultades. Puedes leer y escribir textos sencillos y eres capaz de mantener una conversación básica.</p>
+            </div>
             <div class="pricing-container" style="justify-content: center; display: flex;">
                 <div class="price-card" style="max-width: 400px; width: 100%;">
                     <div class="price-header french"><h3>Francés A1</h3><p>El idioma del amor</p></div>
                     <div class="price-body">
                         <div class="price-tag">$420 <small>MXN</small></div>
                         <p style="text-align:center; color:#888;">$450 MXN Extranjeros</p>
-                        <ul class="benefits-list"><li><i class="far fa-clock"></i> 3 horas semanales</li><li><i class="fas fa-microphone-alt"></i> Pronunciación</li></ul>
+                        <ul class="benefits-list">
+                            <li>🌻 A1</li>
+                            <li>🍒 Consta de 3 HORAS a la semana dividido en TRES días DE 1 HORA O UNA SESIÓN DE TRES HORAS.</li>
+                            <li>🥝 Tenemos horarios DE LUNES A MIÉRCOLES DE 6 A 7 PM. Y SÁBADO DE 9 A 12 PM.</li>
+                            <li>🍉 El material que se utiliza se los brindamos digitalmente.</li>
+                            <li>🍊 Todas las clases se graban para comodidad de los chicos en caso de que no se presenten a su clase.</li>
+                            <li>🍐 Costo mensual de 420 pesos mexicanos en caso de ser de México, si es de otro país su pago es de 450 pesos mensuales.</li>
+                            <li>🫐 Las clases son por zoom.</li>
+                        </ul>
                         <a href="https://wa.me/522471058977" class="cta-card-btn">Inscribirme</a>
                     </div>
                 </div>
             </div>
         </section>
-
         <!-- SECCIÓN: CONTACTO -->
         <section id="contact">
             <div class="hero-banner" style="padding: 2rem; margin-bottom: 2rem;"><h2>Contáctanos</h2><p>Visítanos en Huamantla o escríbenos</p></div>
@@ -561,16 +698,118 @@
                     <iframe src="https://www.google.com/maps?q=Calle+limites+de+Yancuitlalpan+25+Barrio+de+Santa+Maria+Yancuitlalpan+Huamantla+Tlaxcala&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
+            <div class="contact-form">
+                <h3>Envíanos un mensaje</h3>
+                <form id="contactForm">
+                    <input type="text" name="name" placeholder="Tu nombre" required>
+                    <input type="email" name="email" placeholder="Tu email" required>
+                    <textarea name="message" placeholder="Tu mensaje" required></textarea>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
         </section>
-
+        <!-- SECCIÓN: BLOG -->
+        <section id="blog">
+            <div class="hero-banner" style="padding: 3rem; margin-bottom: 3rem;">
+                <h1>Blog</h1>
+                <p style="color: #666;">Tips, noticias y artículos sobre idiomas</p>
+            </div>
+            <div class="blog-grid">
+                <div class="blog-card" onclick="openArticleModal('jlpt-article')">
+                    <h3>Guía Magna del JLPT N5 en México 2025: Compendio Exhaustivo de Estrategias, Logística y Preparación</h3>
+                    <p>Introducción: El Horizonte del Idioma Japonés en el Contexto Mexicano. La certificación de la competencia en el idioma japonés se ha consolidado como un activo estratégico de incalculable valor en el panorama profesional y académico de México...</p>
+                </div>
+            </div>
+        </section>
     </main>
-    
+   
     <a href="https://wa.me/522471058977" class="floating-wa" target="_blank" title="Contáctanos"><i class="fab fa-whatsapp"></i></a>
-
     <footer>
         <p>&copy; 2025 Yorokobi Centro de Idiomas. Todos los derechos reservados.</p>
     </footer>
-
+    <!-- Modal Pop-up -->
+    <div id="popupModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>¡Oferta Especial!</h2>
+            <p>Inscríbete ahora y obtén un descuento en tu primer mes. ¡No te lo pierdas!</p>
+            <a href="https://wa.me/522471058977" class="whatsapp-main-btn" target="_blank">Contáctanos</a>
+        </div>
+    </div>
+    <!-- Modal para Artículo de Blog -->
+    <div id="articleModal" class="modal">
+        <div class="modal-content" style="max-width: 800px; text-align: left;">
+            <span class="close" onclick="closeArticleModal()">&times;</span>
+            <div id="jlpt-article" style="display: none;">
+                <h2>Guía Magna del JLPT N5 en México 2025: Compendio Exhaustivo de Estrategias, Logística y Preparación</h2>
+                <p>Introducción: El Horizonte del Idioma Japonés en el Contexto Mexicano</p>
+                <p>La certificación de la competencia en el idioma japonés se ha consolidado como un activo estratégico de incalculable valor en el panorama profesional y académico de México. En un entorno globalizado donde las relaciones bilaterales han trascendido el intercambio puramente comercial —arraigado en la industria automotriz del Bajío y la manufactura tecnológica— para permear las esferas culturales, el Japanese Language Proficiency Test (JLPT), conocido como Noken, emerge como el estándar de oro.</p>
+                <p>Este informe es el recurso definitivo para el aspirante al nivel N5 en el ciclo 2025. No debe subestimarse bajo la etiqueta de "básico"; es el umbral crítico donde se abandona la condición de observador para internalizar la lógica de una lengua aglutinante.</p>
+                <p>Capítulo I: Anatomía y Arquitectura del JLPT N5</p>
+                <p>Para conquistar el examen, es imperativo diseccionar su estructura. El JLPT N5 es una evaluación de opción múltiple diseñada para medir la comprensión pasiva (lectura y escucha), sin evaluar producción oral o escrita libre.</p>
+                <p>1.1 Competencia Lingüística Requerida</p>
+                <p>El N5 valida la capacidad de leer oraciones típicas y captar información en conversaciones cortas y lentas.</p>
+                <p>DominioCompetencia EspecíficaEscrituraHiragana y Katakana (total). 80-100 Kanjis básicos.Vocabulario800 - 1000 palabras fundamentales.GramáticaPartículas (wa, ga, ni, de), conjugaciones (masu, te, nai, ta) y adjetivos.PragmáticaSaludos, presentaciones y transacciones simples.</p>
+                <p>1.2 Desglose Estructural: Tiempos y Secciones</p>
+                <p>El examen se divide en tres bloques operativos:</p>
+                <p>1. Conocimiento del Lenguaje (Vocabulario) - 20 min: Velocidad pura. Lectura de Kanji, ortografía y contexto semántico.</p>
+                <p>2. Gramática y Lectura - 40 min: Análisis lógico. Incluye el temido ejercicio de "La Estrella" (ordenar oraciones) y comprensión lectora de textos cortos (80 caracteres) y medios (250 caracteres).</p>
+                <p>3. Comprensión Auditiva (Choukai) - 30 min: Atención sostenida. El audio se reproduce una sola vez.</p>
+                <p>1.3 El Sistema de Puntuación</p>
+                <p>El JLPT usa "Puntuación Equiparada" (Scaled Score). No basta con sumar aciertos; debes superar dos barreras:</p>
+                <p>* Puntuación Total: Mínimo 80/180.</p>
+                <p>* Barreras de Corte (Mínimos por sección): Debes obtener al menos 38/120 en Lenguaje/Lectura y 19/60 en Auditiva.</p>
+                <p>  Advertencia: Puedes tener un puntaje perfecto en gramática, pero si fallas en la sección auditiva, reprobarás todo el examen.</p>
+                <p>Capítulo II: Geografía y Logística (Sedes y Fechas 2025)</p>
+                <p>2.1 Calendario Operativo</p>
+                <p>* Convocatoria de Verano (Domingo 6 de julio de 2025): Disponibilidad limitada (usualmente Mérida y Aguascalientes). Ideal para evitar masificaciones.</p>
+                <p>* Convocatoria de Invierno (Domingo 7 de diciembre de 2025): La fecha masiva nacional.</p>
+                <p>  * Apertura de inscripciones: Jueves 7 de agosto, 08:00 h.</p>
+                <p>  * Cierre: Miércoles 27 de agosto, 23:59 h.</p>
+                <p>  * Ojo: En CDMX el cupo N5 suele agotarse en 48 horas.</p>
+                <p>2.2 Sedes Principales</p>
+                <p>* Ciudad de México: Gestionada por el ICMJ, suele aplicarse en sedes alternas como la Universidad La Salle debido al volumen.</p>
+                <p>* Monterrey (ITESM): Instalaciones de primer nivel (cuidado con el aire acondicionado frío).</p>
+                <p>* Aguascalientes (CENDICS): Nodo vital por la industria automotriz (Nissan).</p>
+                <p>* Mérida (IAP): Ambiente menos caótico, ideal para el sureste.</p>
+                <p>* Salamanca: Corredor automotriz (Mazda/Honda).</p>
+                <p>2.3 Estructura de Costos Estimada 2025</p>
+                <p>NivelCosto Estimado (MXN)N5$1,300 - $1,500N4$1,350 - $1,550N3$1,450 - $1,650</p>
+                <p>Capítulo III: El Laberinto de la Inscripción</p>
+                <p>El portal central suele ser www.jlpt.mx. Sigue estos pasos para evitar errores administrativos:</p>
+                <p>1. Foto de Identidad: Formato digital tipo pasaporte, fondo blanco. No selfies recortadas.</p>
+                <p>2. Datos: Sin acentos ni "ñ" (ej. "Munoz").</p>
+                <p>3. Pago y el "Factor OXXO":</p>
+                <p>   * Si pagas en OXXO, el límite es amplio, pero guarda y escanea el ticket inmediatamente. El papel térmico se borra y es tu único comprobante.</p>
+                <p>4. Test Voucher: Se descarga en noviembre. Es tu pase de entrada.</p>
+                <p>5. PIN: Guarda tu contraseña de 8 dígitos; la necesitarás para ver tus resultados.</p>
+                <p>Capítulo IV: El Arsenal del Estudiante (Materiales)</p>
+                <p>La elección del libro define tu estrategia. En México, puedes conseguir materiales en NBK Libros (Nichiboku), Amazon o Mercado Libre.</p>
+                <p>* Minna no Nihongo: El estándar académico riguroso. Excelente base gramatical, pero árido. Requiere el libro de traducciones.</p>
+                <p>* Genki (3ra Edición): Enfoque comunicativo y amigable, con explicaciones en inglés.</p>
+                <p>* Libros de Técnica (Taisaku):</p>
+                <p>  * Nihongo Sou Matome N5: Plan visual de 6 semanas.</p>
+                <p>  * TRY! N5: Gramática con enfoque JLPT.</p>
+                <p>  * Goukaku Dekiru: "Fuerza bruta" con cientos de ejercicios.</p>
+                <p>Capítulo V: Plan Estratégico de Estudio (6 Meses)</p>
+                <p>1. Fase 1 (Meses 1-2): Dominio absoluto de Hiragana/Katakana (lectura fluida) y primeras 400 palabras.</p>
+                <p>2. Fase 2 (Meses 3-4): Gramática dura (partículas y conjugaciones TE, NAI, TA) y los 100 Kanjis (lecturas On y Kun).</p>
+                <p>3. Fase 3 (Meses 5-6): Simulación de combate. Exámenes cronometrados y entrenamiento auditivo intensivo.</p>
+                <p>Capítulo VI: Crónica del Día del Examen</p>
+                <p>El domingo 7 de diciembre de 2025 será una prueba de nervios.</p>
+                <p>El Kit de Supervivencia:</p>
+                <p>* ✅ Test Voucher Impreso (Obligatorio).</p>
+                <p>* ✅ Identificación Oficial (INE/Pasaporte).</p>
+                <p>* ✅ Lápices de madera HB o No. 2 (Evita portaminas).</p>
+                <p>* ✅ Reloj Analógico: Los relojes inteligentes están prohibidos y las aulas a veces no tienen reloj.</p>
+                <p>Reglas de Fuego:</p>
+                <p>Celulares apagados (no vibrar). Si suena, es anulación inmediata. No hay salidas al baño durante los bloques de prueba.</p>
+                <p>Conclusión</p>
+                <p>La preparación para el JLPT N5 en México es un viaje que combina disciplina académica con astucia logística. Con la inscripción a tiempo en agosto y una estrategia equilibrada, tienes todas las herramientas para triunfar. Este certificado es tu llave para becas y oportunidades laborales en el creciente mercado méxico-japonés.</p>
+                <p>¡Ganbatte kudasai! (¡Esfuérzate, por favor!)</p>
+            </div>
+        </div>
+    </div>
     <script>
         // --- NAVEGACIÓN ---
         function showSection(sectionId) {
@@ -578,20 +817,17 @@
             sections.forEach(s => { s.classList.remove('active-section'); s.style.display = 'none'; });
             const buttons = document.querySelectorAll('.nav-btn');
             buttons.forEach(b => b.classList.remove('active'));
-            
+           
             const target = document.getElementById(sectionId);
             setTimeout(() => { target.style.display = 'block'; void target.offsetWidth; target.classList.add('active-section'); }, 50);
-
-            const map = {'home':0, 'about':1, 'faq':2, 'japanese':3, 'french':4, 'contact':5, 'test':6};
+            const map = {'home':0, 'about':1, 'faq':2, 'japanese':3, 'french':4, 'contact':5, 'test':6, 'blog':7};
             if(buttons[map[sectionId]]) buttons[map[sectionId]].classList.add('active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
-
         // --- FAQ LOGIC ---
         function toggleFaq(element) {
             element.classList.toggle('active');
         }
-
         // --- BANCO DE PREGUNTAS EXTENSO (30+) ---
         const questionBank = [
             // Saludos y Básicos
@@ -600,7 +836,6 @@
             { q: "3. ¿Qué significa 'Sensei' (先生)?", options: ["Estudiante", "Maestro", "Doctor", "Escuela"], correct: 1 },
             { q: "4. ¿Cómo se dice 'Yo' (formal)?", options: ["Boku (僕)", "Ore (俺)", "Watashi (私)", "Anata (あなた)"], correct: 2 },
             { q: "5. ¿Cuál es la despedida 'Hasta luego'?", options: ["Sayounara (さようなら)", "Mata ne (またね)", "Oyasumi (おやすみ)", "Hajimemashite (はじめまして)"], correct: 1 },
-
             // Vocabulario
             { q: "6. ¿Qué significa 'Mizu' (水)?", options: ["Fuego", "Agua", "Dinero", "Libro"], correct: 1 },
             { q: "7. ¿Qué significa 'Neko' (猫)?", options: ["Perro", "Pájaro", "Gato", "Pez"], correct: 2 },
@@ -609,7 +844,6 @@
             { q: "10. ¿Qué significa 'Kuruma' (車)?", options: ["Tren", "Bicicleta", "Avión", "Coche"], correct: 3 },
             { q: "11. ¿Qué significa 'Sakura' (桜)?", options: ["Flor de cerezo", "Rosa", "Girasol", "Tulipán"], correct: 0 },
             { q: "12. ¿Qué es 'Gohan' (ご飯)?", options: ["Pan", "Arroz/Comida", "Carne", "Pescado"], correct: 1 },
-
             // Gramática N5
             { q: "13. Partícula de tema: Watashi __ Gakusei desu.", options: ["wa (は)", "ga (が)", "wo (を)", "ni (に)"], correct: 0 },
             { q: "14. Partícula de objeto: Pan __ tabemasu (Comer pan).", options: ["wa (は)", "wo (を)", "de (で)", "ni (に)"], correct: 1 },
@@ -617,31 +851,28 @@
             { q: "16. Pasado de 'Tabemasu' (Comer)", options: ["Tabemashita (食べました)", "Tabemasen (食べません)", "Tabetai (食べたい)", "Tabete (食べて)"], correct: 0 },
             { q: "17. Negativo de 'Desu' (Ser)", options: ["Deshita", "Dewa arimasen", "Deshou", "Desu ne"], correct: 1 },
             { q: "18. ¿Cómo pides algo por favor?", options: ["~kudasai (ください)", "~nasai (なさい)", "~mashou (ましょう)", "~desu (です)"], correct: 0 },
-
             // Kanji
             { q: "19. ¿Qué número es este Kanji: 三?", options: ["Uno", "Dos", "Tres", "Cuatro"], correct: 2 },
             { q: "20. Lectura del Kanji 日 (Sol/Día)", options: ["Tsuki", "Hi / Nichi", "Mizu", "Ki"], correct: 1 },
             { q: "21. Significado de 山 (Yama)", options: ["Río", "Montaña", "Fuego", "Árbol"], correct: 1 },
             { q: "22. Significado de 川 (Kawa)", options: ["Río", "Montaña", "Piedra", "Cielo"], correct: 0 },
             { q: "23. Significado de 人 (Hito)", options: ["Persona", "Grande", "Pequeño", "Entrar"], correct: 0 },
-            
+           
             // Cultura y Frases
             { q: "24. Antes de comer se dice...", options: ["Itadakimasu (いただきます)", "Gochisousama (ごちそうさま)", "Tadaima (ただいま)", "Okaeri (おかえり)"], correct: 0 },
             { q: "25. Al salir de casa se dice...", options: ["Ittekimasu (行ってきます)", "Itterasshai (行ってらっしゃい)", "Tadaima (ただいま)", "Okaeri (おかえり)"], correct: 0 },
             { q: "26. 'Kawaii' significa...", options: ["Miedo", "Bonito/Tierno", "Feo", "Rápido"], correct: 1 },
             { q: "27. Capital de Japón", options: ["Kyoto", "Osaka", "Tokyo", "Hiroshima"], correct: 2 },
             { q: "28. Moneda de Japón", options: ["Won", "Yuan", "Yen (円)", "Dólar"], correct: 2 },
-            
+           
             // N4 Intro
             { q: "29. Forma Te: 'Kaku' (Escribir) se convierte en...", options: ["Kaite (書いて)", "Kakite", "Kaita", "Kakande"], correct: 0 },
             { q: "30. 'Tabetai' significa...", options: ["Comí", "No como", "Quiero comer", "Comamos"], correct: 2 }
         ];
-
         let currentQuestions = [];
         let currentIndex = 0;
         let score = 0;
         let selectedOption = null;
-
         function shuffleArray(array) {
             for (let i = array.length - 1; i > 0; i--) {
                 const j = Math.floor(Math.random() * (i + 1));
@@ -649,28 +880,24 @@
             }
             return array;
         }
-
         function restartQuiz() {
             // Seleccionar 10 preguntas aleatorias nuevas
             const shuffled = shuffleArray([...questionBank]);
             currentQuestions = shuffled.slice(0, 10);
-            
+           
             currentIndex = 0;
             score = 0;
             document.getElementById('result-screen').style.display = 'none';
             document.getElementById('quiz-screen').style.display = 'block';
             loadQuestion();
         }
-
         function loadQuestion() {
             const qData = currentQuestions[currentIndex];
             document.getElementById('question-text').innerText = qData.q;
             document.getElementById('q-counter').innerText = `Pregunta ${currentIndex + 1} de 10`;
             document.getElementById('progress').style.width = `${((currentIndex) / 10) * 100}%`;
-
             const container = document.getElementById('options-container');
             container.innerHTML = '';
-
             qData.options.forEach((opt, index) => {
                 const btn = document.createElement('button');
                 btn.className = 'option-btn';
@@ -680,31 +907,39 @@
             });
             document.getElementById('next-btn').style.display = 'none';
         }
-
         function selectOption(index, btnElement) {
             selectedOption = index;
             document.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
             btnElement.classList.add('selected');
             document.getElementById('next-btn').style.display = 'inline-block';
         }
-
         function nextQuestion() {
-            if (selectedOption === currentQuestions[currentIndex].correct) score++;
-            currentIndex++;
-            selectedOption = null;
-
-            if (currentIndex < 10) {
-                loadQuestion();
-            } else {
-                showResult();
-            }
+            const isCorrect = selectedOption === currentQuestions[currentIndex].correct;
+            if (isCorrect) score++;
+            // Mostrar feedback
+            const buttons = document.querySelectorAll('.option-btn');
+            buttons.forEach((btn, idx) => {
+                if (idx === currentQuestions[currentIndex].correct) {
+                    btn.classList.add('correct');
+                } else if (idx === selectedOption) {
+                    btn.classList.add('incorrect');
+                }
+                btn.disabled = true;
+            });
+            setTimeout(() => {
+                currentIndex++;
+                selectedOption = null;
+                if (currentIndex < 10) {
+                    loadQuestion();
+                } else {
+                    showResult();
+                }
+            }, 1000); // Espera 1 segundo para mostrar feedback
         }
-
         function showResult() {
             document.getElementById('quiz-screen').style.display = 'none';
             document.getElementById('result-screen').style.display = 'block';
             document.getElementById('final-score').innerText = `${score}/10`;
-
             let title, desc, waMsg;
             if (score <= 4) {
                 title = "Nivel Principiante (Inicio)";
@@ -719,14 +954,38 @@
                 desc = "¡Excelente nivel! Estás listo para retos mayores como el N4 o N3.";
                 waMsg = `Hice el test en la web y saqué ${score}/10. Tengo nivel intermedio.`;
             }
-
             document.getElementById('level-title').innerText = title;
             document.getElementById('level-desc').innerText = desc;
             document.getElementById('wa-result-link').href = `https://wa.me/522471058977?text=${encodeURIComponent(waMsg)}`;
         }
-
         // Iniciar Test al cargar
         restartQuiz();
+        // Pop-up Logic
+        function showModal() {
+            if (!sessionStorage.getItem('popupShown')) {
+                document.getElementById('popupModal').style.display = 'block';
+                sessionStorage.setItem('popupShown', 'true');
+            }
+        }
+        function closeModal() {
+            document.getElementById('popupModal').style.display = 'none';
+        }
+        window.onload = showModal;
+        // Form Submission (simulada, usa email.js o similar en producción)
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Mensaje enviado exitosamente!');
+            this.reset();
+        });
+        // Article Modal
+        function openArticleModal(articleId) {
+            document.getElementById('articleModal').style.display = 'block';
+            document.getElementById(articleId).style.display = 'block';
+        }
+        function closeArticleModal() {
+            document.getElementById('articleModal').style.display = 'none';
+            document.querySelectorAll('#articleModal > .modal-content > div').forEach(div => div.style.display = 'none');
+        }
     </script>
 </body>
 </html>
