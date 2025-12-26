@@ -8,8 +8,58 @@
     <title>Yorokobi | Centro de Idiomas</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700;900&display=swap" rel="stylesheet">
    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                    },
+                    colors: {
+                        japan: {
+                            red: '#BC002D', /* Rojo Bandera */
+                            dark: '#1a1a1a',
+                            light: '#f4f4f4',
+                            paper: '#fffbf0' /* Tono papel arroz sutil */
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <style>
+        /* Animaciones personalizadas CSS */
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+       
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* Estilo para listas personalizadas */
+        .list-check li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .list-check li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #BC002D;
+            font-weight: bold;
+        }
         :root {
             --primary: #FF4E50; /* Rojo vibrante */
             --primary-dark: #D43F41;
@@ -738,75 +788,256 @@
     </div>
     <!-- Modal para Artículo de Blog -->
     <div id="articleModal" class="modal">
-        <div class="modal-content" style="max-width: 800px; text-align: left;">
-            <span class="close" onclick="closeArticleModal()">&times;</span>
+        <div class="modal-content" style="max-width: 1000px; padding: 0; overflow: auto; text-align: left;">
+            <span class="close" onclick="closeArticleModal()" style="position: absolute; top: 10px; right: 10px; z-index: 10;">&times;</span>
             <div id="jlpt-article" style="display: none;">
-                <h2>Guía Magna del JLPT N5 en México 2025: Compendio Exhaustivo de Estrategias, Logística y Preparación</h2>
-                <p>Introducción: El Horizonte del Idioma Japonés en el Contexto Mexicano</p>
-                <p>La certificación de la competencia en el idioma japonés se ha consolidado como un activo estratégico de incalculable valor en el panorama profesional y académico de México. En un entorno globalizado donde las relaciones bilaterales han trascendido el intercambio puramente comercial —arraigado en la industria automotriz del Bajío y la manufactura tecnológica— para permear las esferas culturales, el Japanese Language Proficiency Test (JLPT), conocido como Noken, emerge como el estándar de oro.</p>
-                <p>Este informe es el recurso definitivo para el aspirante al nivel N5 en el ciclo 2025. No debe subestimarse bajo la etiqueta de "básico"; es el umbral crítico donde se abandona la condición de observador para internalizar la lógica de una lengua aglutinante.</p>
-                <p>Capítulo I: Anatomía y Arquitectura del JLPT N5</p>
-                <p>Para conquistar el examen, es imperativo diseccionar su estructura. El JLPT N5 es una evaluación de opción múltiple diseñada para medir la comprensión pasiva (lectura y escucha), sin evaluar producción oral o escrita libre.</p>
-                <p>1.1 Competencia Lingüística Requerida</p>
-                <p>El N5 valida la capacidad de leer oraciones típicas y captar información en conversaciones cortas y lentas.</p>
-                <p>DominioCompetencia EspecíficaEscrituraHiragana y Katakana (total). 80-100 Kanjis básicos.Vocabulario800 - 1000 palabras fundamentales.GramáticaPartículas (wa, ga, ni, de), conjugaciones (masu, te, nai, ta) y adjetivos.PragmáticaSaludos, presentaciones y transacciones simples.</p>
-                <p>1.2 Desglose Estructural: Tiempos y Secciones</p>
-                <p>El examen se divide en tres bloques operativos:</p>
-                <p>1. Conocimiento del Lenguaje (Vocabulario) - 20 min: Velocidad pura. Lectura de Kanji, ortografía y contexto semántico.</p>
-                <p>2. Gramática y Lectura - 40 min: Análisis lógico. Incluye el temido ejercicio de "La Estrella" (ordenar oraciones) y comprensión lectora de textos cortos (80 caracteres) y medios (250 caracteres).</p>
-                <p>3. Comprensión Auditiva (Choukai) - 30 min: Atención sostenida. El audio se reproduce una sola vez.</p>
-                <p>1.3 El Sistema de Puntuación</p>
-                <p>El JLPT usa "Puntuación Equiparada" (Scaled Score). No basta con sumar aciertos; debes superar dos barreras:</p>
-                <p>* Puntuación Total: Mínimo 80/180.</p>
-                <p>* Barreras de Corte (Mínimos por sección): Debes obtener al menos 38/120 en Lenguaje/Lectura y 19/60 en Auditiva.</p>
-                <p>  Advertencia: Puedes tener un puntaje perfecto en gramática, pero si fallas en la sección auditiva, reprobarás todo el examen.</p>
-                <p>Capítulo II: Geografía y Logística (Sedes y Fechas 2025)</p>
-                <p>2.1 Calendario Operativo</p>
-                <p>* Convocatoria de Verano (Domingo 6 de julio de 2025): Disponibilidad limitada (usualmente Mérida y Aguascalientes). Ideal para evitar masificaciones.</p>
-                <p>* Convocatoria de Invierno (Domingo 7 de diciembre de 2025): La fecha masiva nacional.</p>
-                <p>  * Apertura de inscripciones: Jueves 7 de agosto, 08:00 h.</p>
-                <p>  * Cierre: Miércoles 27 de agosto, 23:59 h.</p>
-                <p>  * Ojo: En CDMX el cupo N5 suele agotarse en 48 horas.</p>
-                <p>2.2 Sedes Principales</p>
-                <p>* Ciudad de México: Gestionada por el ICMJ, suele aplicarse en sedes alternas como la Universidad La Salle debido al volumen.</p>
-                <p>* Monterrey (ITESM): Instalaciones de primer nivel (cuidado con el aire acondicionado frío).</p>
-                <p>* Aguascalientes (CENDICS): Nodo vital por la industria automotriz (Nissan).</p>
-                <p>* Mérida (IAP): Ambiente menos caótico, ideal para el sureste.</p>
-                <p>* Salamanca: Corredor automotriz (Mazda/Honda).</p>
-                <p>2.3 Estructura de Costos Estimada 2025</p>
-                <p>NivelCosto Estimado (MXN)N5$1,300 - $1,500N4$1,350 - $1,550N3$1,450 - $1,650</p>
-                <p>Capítulo III: El Laberinto de la Inscripción</p>
-                <p>El portal central suele ser www.jlpt.mx. Sigue estos pasos para evitar errores administrativos:</p>
-                <p>1. Foto de Identidad: Formato digital tipo pasaporte, fondo blanco. No selfies recortadas.</p>
-                <p>2. Datos: Sin acentos ni "ñ" (ej. "Munoz").</p>
-                <p>3. Pago y el "Factor OXXO":</p>
-                <p>   * Si pagas en OXXO, el límite es amplio, pero guarda y escanea el ticket inmediatamente. El papel térmico se borra y es tu único comprobante.</p>
-                <p>4. Test Voucher: Se descarga en noviembre. Es tu pase de entrada.</p>
-                <p>5. PIN: Guarda tu contraseña de 8 dígitos; la necesitarás para ver tus resultados.</p>
-                <p>Capítulo IV: El Arsenal del Estudiante (Materiales)</p>
-                <p>La elección del libro define tu estrategia. En México, puedes conseguir materiales en NBK Libros (Nichiboku), Amazon o Mercado Libre.</p>
-                <p>* Minna no Nihongo: El estándar académico riguroso. Excelente base gramatical, pero árido. Requiere el libro de traducciones.</p>
-                <p>* Genki (3ra Edición): Enfoque comunicativo y amigable, con explicaciones en inglés.</p>
-                <p>* Libros de Técnica (Taisaku):</p>
-                <p>  * Nihongo Sou Matome N5: Plan visual de 6 semanas.</p>
-                <p>  * TRY! N5: Gramática con enfoque JLPT.</p>
-                <p>  * Goukaku Dekiru: "Fuerza bruta" con cientos de ejercicios.</p>
-                <p>Capítulo V: Plan Estratégico de Estudio (6 Meses)</p>
-                <p>1. Fase 1 (Meses 1-2): Dominio absoluto de Hiragana/Katakana (lectura fluida) y primeras 400 palabras.</p>
-                <p>2. Fase 2 (Meses 3-4): Gramática dura (partículas y conjugaciones TE, NAI, TA) y los 100 Kanjis (lecturas On y Kun).</p>
-                <p>3. Fase 3 (Meses 5-6): Simulación de combate. Exámenes cronometrados y entrenamiento auditivo intensivo.</p>
-                <p>Capítulo VI: Crónica del Día del Examen</p>
-                <p>El domingo 7 de diciembre de 2025 será una prueba de nervios.</p>
-                <p>El Kit de Supervivencia:</p>
-                <p>* ✅ Test Voucher Impreso (Obligatorio).</p>
-                <p>* ✅ Identificación Oficial (INE/Pasaporte).</p>
-                <p>* ✅ Lápices de madera HB o No. 2 (Evita portaminas).</p>
-                <p>* ✅ Reloj Analógico: Los relojes inteligentes están prohibidos y las aulas a veces no tienen reloj.</p>
-                <p>Reglas de Fuego:</p>
-                <p>Celulares apagados (no vibrar). Si suena, es anulación inmediata. No hay salidas al baño durante los bloques de prueba.</p>
-                <p>Conclusión</p>
-                <p>La preparación para el JLPT N5 en México es un viaje que combina disciplina académica con astucia logística. Con la inscripción a tiempo en agosto y una estrategia equilibrada, tienes todas las herramientas para triunfar. Este certificado es tu llave para becas y oportunidades laborales en el creciente mercado méxico-japonés.</p>
-                <p>¡Ganbatte kudasai! (¡Esfuérzate, por favor!)</p>
+<header class="relative bg-japan-dark text-white overflow-hidden">
+        <div class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/asanoha-400px.png')]"></div> <div class="container mx-auto px-6 py-20 relative z-10 text-center">
+            <span class="inline-block py-1 px-3 rounded-full bg-japan-red text-xs font-bold tracking-widest uppercase mb-4 fade-in-up">Guía Oficial 2025</span>
+            <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight fade-in-up delay-100">
+                Guía Magna del <span class="text-japan-red">JLPT N5</span> en México
+            </h1>
+            <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-8 fade-in-up delay-200">
+                Compendio exhaustivo de estrategias, logística y preparación académica para conquistar el idioma japonés.
+            </p>
+            <div class="fade-in-up delay-300">
+                <a href="#estrategia" class="bg-white text-japan-red font-bold py-3 px-8 rounded-full hover:bg-gray-100 transition shadow-lg transform hover:scale-105 duration-300 inline-block">
+                    Ver Estrategia
+                </a>
+            </div>
+        </div>
+    </header>
+    <section class="py-16 px-6 container mx-auto max-w-4xl">
+        <div class="border-l-4 border-japan-red pl-6 py-2 bg-white shadow-sm rounded-r-lg">
+            <h2 class="text-2xl font-bold mb-4">El Horizonte del Idioma Japonés</h2>
+            <p class="text-gray-600 leading-relaxed">
+                El nivel N5 no debe subestimarse bajo la etiqueta de "básico". Representa el umbral crítico donde el estudiante abandona la condición de observador externo para internalizar la lógica estructural de una lengua aglutinante. Esta guía es tu hoja de ruta infalible hacia la certificación en 2025.
+            </p>
+        </div>
+    </section>
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <h2 class="text-3xl font-bold text-center mb-12 flex items-center justify-center">
+                <span class="bg-japan-red w-8 h-1 mr-4"></span>
+                Anatomía del N5
+                <span class="bg-japan-red w-8 h-1 ml-4"></span>
+            </h2>
+            <div class="overflow-x-auto shadow-xl rounded-lg">
+                <table class="min-w-full bg-white">
+                    <thead class="bg-gray-800 text-white">
+                        <tr>
+                            <th class="py-4 px-6 text-left text-sm font-semibold uppercase tracking-wider">Dominio</th>
+                            <th class="py-4 px-6 text-left text-sm font-semibold uppercase tracking-wider">Competencia Requerida</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <tr class="hover:bg-red-50 transition">
+                            <td class="py-4 px-6 font-bold text-japan-red">Escritura</td>
+                            <td class="py-4 px-6">Hiragana y Katakana (Total). 80-100 Kanjis básicos.</td>
+                        </tr>
+                        <tr class="bg-gray-50 hover:bg-red-50 transition">
+                            <td class="py-4 px-6 font-bold text-japan-red">Vocabulario</td>
+                            <td class="py-4 px-6">800 - 1000 palabras fundamentales (familia, tiempo, verbos).</td>
+                        </tr>
+                        <tr class="hover:bg-red-50 transition">
+                            <td class="py-4 px-6 font-bold text-japan-red">Gramática</td>
+                            <td class="py-4 px-6">Partículas (wa, ga, ni, de), conjugaciones (masu, te, nai, ta).</td>
+                        </tr>
+                        <tr class="bg-gray-50 hover:bg-red-50 transition">
+                            <td class="py-4 px-6 font-bold text-japan-red">Puntuación</td>
+                            <td class="py-4 px-6 font-semibold">Mínimo Total: 80/180 pts | Mínimo Auditivo: 19/60 pts</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+           
+            <div class="mt-8 p-4 bg-yellow-50 border border-yellow-200 rounded-lg flex items-start">
+                <div class="text-yellow-600 text-2xl mr-3">⚠️</div>
+                <p class="text-sm text-yellow-800">
+                    <strong>Advertencia Crítica:</strong> Puedes tener un puntaje perfecto en gramática, pero si obtienes menos de 19 puntos en la sección auditiva, reprobarás automáticamente. El equilibrio es clave.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="py-16 bg-japan-light">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <h2 class="text-3xl font-bold mb-10 text-center">Logística 2025: Fechas y Sedes</h2>
+           
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-2xl transition duration-300 border-t-4 border-blue-400 group">
+                    <h3 class="text-xl font-bold mb-2 group-hover:text-blue-500 transition">Verano (Julio 2025)</h3>
+                    <p class="text-gray-500 text-sm mb-4">Domingo 6 de Julio</p>
+                    <ul class="text-gray-600 space-y-2 text-sm">
+                        <li>📍 Sedes limitadas (Mérida, Aguascalientes).</li>
+                        <li>📅 Ideal para evitar masificaciones.</li>
+                        <li>🏁 Resultados: Finales de Agosto.</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-2xl transition duration-300 border-t-4 border-japan-red group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-japan-red text-white text-xs font-bold px-3 py-1 rounded-bl-lg">MASIVA</div>
+                    <h3 class="text-xl font-bold mb-2 group-hover:text-japan-red transition">Invierno (Diciembre 2025)</h3>
+                    <p class="text-gray-500 text-sm mb-4">Domingo 7 de Diciembre</p>
+                    <ul class="text-gray-600 space-y-2 text-sm">
+                        <li>📍 Todas las sedes (CDMX, MTY, GDL, etc).</li>
+                        <li>📅 Inscripciones: <strong>7 al 27 de Agosto</strong>.</li>
+                        <li>🔥 <strong>Alerta:</strong> Cupo en CDMX se agota en 48hrs.</li>
+                    </ul>
+                </div>
+            </div>
+            <h3 class="text-xl font-bold mb-6 text-gray-700">Sedes Principales</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="bg-white p-4 rounded shadow hover:bg-gray-50 transition cursor-default">
+                    <div class="font-bold text-gray-800">CDMX (ICMJ)</div>
+                    <div class="text-xs text-gray-500">Sede externa (La Salle/Otras)</div>
+                </div>
+                <div class="bg-white p-4 rounded shadow hover:bg-gray-50 transition cursor-default">
+                    <div class="font-bold text-gray-800">Monterrey (ITESM)</div>
+                    <div class="text-xs text-gray-500">Aire acondicionado muy frío</div>
+                </div>
+                <div class="bg-white p-4 rounded shadow hover:bg-gray-50 transition cursor-default">
+                    <div class="font-bold text-gray-800">Aguascalientes</div>
+                    <div class="text-xs text-gray-500">Corazón automotriz (Nissan)</div>
+                </div>
+                <div class="bg-white p-4 rounded shadow hover:bg-gray-50 transition cursor-default">
+                    <div class="font-bold text-gray-800">Mérida (IAP)</div>
+                    <div class="text-xs text-gray-500">Sede tranquila en el sureste</div>
+                </div>
+                <div class="bg-white p-4 rounded shadow hover:bg-gray-50 transition cursor-default">
+                    <div class="font-bold text-gray-800">Salamanca</div>
+                    <div class="text-xs text-gray-500">Zona industrial Bajío</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <h2 class="text-3xl font-bold mb-8 text-center">El Laberinto de la Inscripción</h2>
+            <div class="bg-gray-800 text-white rounded-2xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
+                <div class="relative z-10">
+                    <h3 class="text-2xl font-bold mb-4 text-japan-red">La Regla de Oro del OXXO</h3>
+                    <p class="mb-6 text-gray-300">
+                        El 80% de los problemas administrativos provienen de este paso. Si pagas en efectivo:
+                    </p>
+                    <div class="flex items-start space-x-4 bg-gray-700 p-4 rounded-lg">
+                        <div class="text-3xl">🧾</div>
+                        <div>
+                            <p class="font-bold text-white">Escanea el ticket inmediatamente.</p>
+                            <p class="text-sm text-gray-400 mt-1">El papel térmico se borra con el calor o el tiempo. Ese papel es tu único comprobante legal ante el comité del JLPT.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute -top-24 -right-24 w-64 h-64 bg-gray-700 rounded-full opacity-50 blur-3xl"></div>
+            </div>
+        </div>
+    </section>
+    <section class="py-16 bg-japan-paper" id="materiales">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <h2 class="text-3xl font-bold mb-12 text-center">El Arsenal del Estudiante</h2>
+           
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition duration-300">
+                    <div class="h-3 bg-blue-600"></div> <div class="p-6">
+                        <h4 class="text-xl font-bold mb-2">Minna no Nihongo</h4>
+                        <span class="text-xs font-bold bg-gray-200 px-2 py-1 rounded text-gray-600">Académico</span>
+                        <p class="text-gray-600 mt-4 text-sm">
+                            El estándar del rigor. Inmersión total. Garantiza una base gramatical sólida pero puede ser árido.
+                        </p>
+                        <div class="mt-4 pt-4 border-t text-sm text-gray-500">
+                            <strong>Ideal para:</strong> Quienes aman la estructura.
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition duration-300">
+                    <div class="h-3 bg-orange-500"></div> <div class="p-6">
+                        <h4 class="text-xl font-bold mb-2">Genki I (3ra Ed)</h4>
+                        <span class="text-xs font-bold bg-gray-200 px-2 py-1 rounded text-gray-600">Comunicativo</span>
+                        <p class="text-gray-600 mt-4 text-sm">
+                            Enfoque moderno para occidentales. Explicaciones gramaticales amigables (en inglés).
+                        </p>
+                        <div class="mt-4 pt-4 border-t text-sm text-gray-500">
+                            <strong>Ideal para:</strong> Autodidactas.
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition duration-300">
+                    <div class="h-3 bg-green-500"></div> <div class="p-6">
+                        <h4 class="text-xl font-bold mb-2">Nihongo Sou Matome</h4>
+                        <span class="text-xs font-bold bg-gray-200 px-2 py-1 rounded text-gray-600">Repaso Flash</span>
+                        <p class="text-gray-600 mt-4 text-sm">
+                            Plan estructurado de 6 semanas. Muy visual, poco texto. Perfecto para el mes previo.
+                        </p>
+                        <div class="mt-4 pt-4 border-t text-sm text-gray-500">
+                            <strong>Ideal para:</strong> Repaso final.
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="mt-12 text-center">
+                <p class="text-gray-500 text-sm">¿Dónde comprar en México? <span class="font-bold text-gray-800">NBK Libros (Coyoacán)</span> o <span class="font-bold text-gray-800">Amazon MX</span>.</p>
+            </div>
+        </div>
+    </section>
+    <section class="py-16 bg-white" id="estrategia">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <h2 class="text-3xl font-bold mb-10 text-center">Plan Estratégico de 6 Meses</h2>
+           
+            <div class="space-y-8">
+                <div class="flex flex-col md:flex-row items-start md:items-center group">
+                    <div class="flex-shrink-0 w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center font-bold text-xl text-gray-500 group-hover:bg-japan-red group-hover:text-white transition duration-300 mb-4 md:mb-0 md:mr-6">
+                        01
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold">Los Cimientos (Meses 1-2)</h3>
+                        <p class="text-gray-600">Dominio absoluto de Hiragana y Katakana. Lectura fluida sin titubeos. Primeras 400 palabras (verbos de movimiento, adjetivos, familia).</p>
+                    </div>
+                </div>
+               
+                <div class="flex flex-col md:flex-row items-start md:items-center group">
+                    <div class="flex-shrink-0 w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center font-bold text-xl text-gray-500 group-hover:bg-japan-red group-hover:text-white transition duration-300 mb-4 md:mb-0 md:mr-6">
+                        02
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold">Construcción Gramatical (Meses 3-4)</h3>
+                        <p class="text-gray-600">Enfoque en Partículas y Conjugaciones (TE, NAI, TA). Aprender los 100 Kanjis con lecturas On-yomi y Kun-yomi.</p>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row items-start md:items-center group">
+                    <div class="flex-shrink-0 w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center font-bold text-xl text-gray-500 group-hover:bg-japan-red group-hover:text-white transition duration-300 mb-4 md:mb-0 md:mr-6">
+                        03
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold">Simulación de Combate (Meses 5-6)</h3>
+                        <p class="text-gray-600">Exámenes cronometrados con reloj analógico. Entrenamiento auditivo intensivo para aprender a "descartar información".</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-16 bg-japan-dark text-white">
+        <div class="container mx-auto px-6 max-w-3xl text-center">
+            <h2 class="text-3xl font-bold mb-8">Kit de Supervivencia: Día D</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left bg-gray-800 p-8 rounded-xl shadow-inner border border-gray-700">
+                <ul class="space-y-4 list-none">
+                    <li class="flex items-center"><span class="text-green-500 mr-2">✔</span> Test Voucher Impreso</li>
+                    <li class="flex items-center"><span class="text-green-500 mr-2">✔</span> Identificación Oficial (INE)</li>
+                    <li class="flex items-center"><span class="text-green-500 mr-2">✔</span> Lápices HB o No. 2</li>
+                </ul>
+                <ul class="space-y-4 list-none">
+                    <li class="flex items-center"><span class="text-green-500 mr-2">✔</span> Reloj Analógico (Vital)</li>
+                    <li class="flex items-center"><span class="text-green-500 mr-2">✔</span> Goma blanca de calidad</li>
+                    <li class="flex items-center"><span class="text-green-500 mr-2">✔</span> Celular APAGADO</li>
+                </ul>
+            </div>
+            <div class="mt-10">
+                <p class="text-2xl font-bold mb-4 tracking-widest">頑張ってください</p>
+                <p class="text-gray-400">¡Ganbatte kudasai!</p>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-black text-gray-500 py-8 text-center text-sm">
+        <p>© 2025 Guía Magna JLPT México. Información basada en convocatorias oficiales pasadas.</p>
+    </footer>
             </div>
         </div>
     </div>
